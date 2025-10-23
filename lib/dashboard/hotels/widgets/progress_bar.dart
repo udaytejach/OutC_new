@@ -3,10 +3,10 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:outc/dashboard/flights/widgets/colors.dart';
 import 'package:outc/widgets/colors/colors.dart';
 
-class ProgressBarHUD extends StatelessWidget {
+class Hotels_ProgressBarHUD extends StatelessWidget {
   final Color? backGroundColor;
 
-  const ProgressBarHUD({super.key, this.backGroundColor});
+  const Hotels_ProgressBarHUD({super.key, this.backGroundColor});
 
   @override
   Widget build(BuildContext context) {

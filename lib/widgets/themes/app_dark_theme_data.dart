@@ -35,9 +35,14 @@ ThemeData appDarkThemeData() {
       ),
     ),
 
-    tabBarTheme: const TabBarTheme(
-      labelColor: Color.fromRGBO(34, 193, 224, 1),
-      unselectedLabelColor: Colors.white,
+    // tabBarTheme: const TabBarTheme(
+    //   labelColor: Color.fromRGBO(34, 193, 224, 1),
+    //   unselectedLabelColor: Colors.white,
+    // ),
+    tabBarTheme: const TabBarThemeData(
+      labelStyle: TextStyle(color: Color.fromRGBO(34, 193, 224, 1)),
+      unselectedLabelStyle: TextStyle(color: Colors.white),
+      indicatorColor: Color.fromRGBO(34, 193, 224, 1),
     ),
 
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(

@@ -1,6 +1,6 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:avatars/avatars.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -9,15 +9,17 @@ import 'package:outc/dashboard/dashboard.dart';
 import 'package:outc/dashboard/flights/models/flights_search_payloadmodel.dart';
 import 'package:outc/dashboard/flights/screens/fetched_domestic_multicity_flights.dart';
 import 'package:outc/dashboard/flights/screens/fetched_multicity_flights.dart';
-import 'package:outc/dashboard/flights/screens/fetched_roundtrip_flights.dart';
+
 import 'package:outc/dashboard/flights/screens/from_city_dropdown.dart';
 import 'package:outc/dashboard/flights/screens/oneway_flight_list.dart';
 import 'package:outc/dashboard/flights/screens/to_city_dropdown.dart';
-import 'package:outc/dashboard/homepage.dart';
+import 'package:outc/dashboard/flights/widgets/colors.dart';
+import 'package:outc/dashboard/flights/widgets/progressbar.dart';
+
 import 'package:outc/services/api_services_list.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:outc/widgets/components/toast.dart';
-import 'package:outc/widgets/progressbar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class FlightsListPage extends StatefulWidget {
@@ -59,7 +61,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ProgressBar(
+    return Flight_ProgressBar(
       inAsyncCall: isApiCallProcess,
       opacity: 0.3,
       child: uiSetup(context),
@@ -97,7 +99,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Flights_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -107,11 +109,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
         leading: Padding(
             padding: const EdgeInsets.all(8),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
               icon: Icon(
                 Icons.home,
                 size: 28,
-                color: Colours.strongRed,
+                color: Flights_Colours.strongRed,
               ),
               onPressed: () {
                 Navigator.of(context).push(
@@ -127,11 +129,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Flights_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -162,7 +164,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Flights_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -179,7 +181,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Flights_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -211,7 +213,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                               GestureDetector(
                                 child: Icon(
                                   Icons.arrow_back_ios_new_outlined,
-                                  color: Colours.veryDarkGrey,
+                                  color: Flights_Colours.veryDarkGrey,
                                   size: 20,
                                 ),
                                 onTap: () {
@@ -278,15 +280,15 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                           .getselecedscroller()
                                                       .toString() ==
                                                   "oneWay"
-                                              ? Colours.dardModerateBlue
-                                              : Colours.strongRed,
+                                              ? Flights_Colours.dardModerateBlue
+                                              : Flights_Colours.strongRed,
                                         )),
                                     backgroundColor:
                                         SharedPrefServices.getselecedscroller()
                                                     .toString() ==
                                                 "oneWay"
-                                            ? Colours.dardModerateBlue
-                                            : Colours.strongRed,
+                                            ? Flights_Colours.dardModerateBlue
+                                            : Flights_Colours.strongRed,
                                     fixedSize: const Size(100, 40),
                                     textStyle: const TextStyle(
                                       fontSize: 14.0,
@@ -328,15 +330,15 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                           .getselecedscroller()
                                                       .toString() ==
                                                   "roundTrip"
-                                              ? Colours.dardModerateBlue
-                                              : Colours.strongRed,
+                                              ? Flights_Colours.dardModerateBlue
+                                              : Flights_Colours.strongRed,
                                         )),
                                     backgroundColor:
                                         SharedPrefServices.getselecedscroller()
                                                     .toString() ==
                                                 "roundTrip"
-                                            ? Colours.dardModerateBlue
-                                            : Colours.strongRed,
+                                            ? Flights_Colours.dardModerateBlue
+                                            : Flights_Colours.strongRed,
                                     fixedSize: const Size(100, 40),
                                     textStyle: const TextStyle(
                                       fontSize: 14.0,
@@ -375,15 +377,15 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                           .getselecedscroller()
                                                       .toString() ==
                                                   "multidestination"
-                                              ? Colours.dardModerateBlue
-                                              : Colours.strongRed,
+                                              ? Flights_Colours.dardModerateBlue
+                                              : Flights_Colours.strongRed,
                                         )),
                                     backgroundColor:
                                         SharedPrefServices.getselecedscroller()
                                                     .toString() ==
                                                 "multidestination"
-                                            ? Colours.dardModerateBlue
-                                            : Colours.strongRed,
+                                            ? Flights_Colours.dardModerateBlue
+                                            : Flights_Colours.strongRed,
                                     fixedSize: const Size(100, 40),
                                     textStyle: const TextStyle(
                                       fontSize: 14.0,
@@ -440,7 +442,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                             Icon(
                                               Icons.flight_takeoff,
                                               size: 30,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                             ),
                                             const SizedBox(
                                               width: 10,
@@ -475,8 +477,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                         "FROM",
                                                         style: TextStyle(
                                                           fontSize: 12.0,
-                                                          color:
-                                                              Colours.strongRed,
+                                                          color: Flights_Colours
+                                                              .strongRed,
                                                           fontFamily: 'Poppins',
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -559,7 +561,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                             Icon(
                                               Icons.flight_land,
                                               size: 30,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                             ),
                                             const SizedBox(
                                               width: 10,
@@ -586,7 +588,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "TO",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -670,7 +673,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                               Icon(
                                                 Icons.calendar_today,
                                                 size: 24,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               const SizedBox(
                                                 width: 10,
@@ -685,7 +689,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "DEPARTURE DATE",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -731,7 +736,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                             Icon(
                                               Icons.flight_takeoff,
                                               size: 30,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                             ),
                                             const SizedBox(
                                               width: 10,
@@ -766,8 +771,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                         "FROM",
                                                         style: TextStyle(
                                                           fontSize: 12.0,
-                                                          color:
-                                                              Colours.strongRed,
+                                                          color: Flights_Colours
+                                                              .strongRed,
                                                           fontFamily: 'Poppins',
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -850,7 +855,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                             Icon(
                                               Icons.flight_land,
                                               size: 30,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                             ),
                                             const SizedBox(
                                               width: 10,
@@ -877,7 +882,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "TO",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -961,7 +967,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                               Icon(
                                                 Icons.calendar_today,
                                                 size: 24,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               const SizedBox(
                                                 width: 10,
@@ -976,7 +983,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "DEPARTURE DATE",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -1067,7 +1075,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                               IconButton(
                                                                                 icon: Icon(
                                                                                   Icons.close,
-                                                                                  color: Colours.strongRed,
+                                                                                  color: Flights_Colours.strongRed,
                                                                                   size: 24,
                                                                                 ),
                                                                                 onPressed: () {
@@ -1077,7 +1085,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                               Text('ADD NUMBER OF TRAVELLERS',
                                                                                   style: TextStyle(
                                                                                     fontSize: 14.0,
-                                                                                    color: Colours.strongRed,
+                                                                                    color: Flights_Colours.strongRed,
                                                                                     fontWeight: FontWeight.bold,
                                                                                     fontFamily: 'Poppins',
                                                                                   )),
@@ -1134,7 +1142,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                         elevation: 0.0,
                                                                                         shape: RoundedRectangleBorder(
                                                                                           side: BorderSide(
-                                                                                            color: Colours.strongRed,
+                                                                                            color: Flights_Colours.strongRed,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(10),
                                                                                         ),
@@ -1158,7 +1166,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.remove,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -1178,7 +1186,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                         fontFamily: "Poppins",
                                                                                                         fontWeight: FontWeight.w700,
                                                                                                         fontSize: 16.0,
-                                                                                                        color: Colours.strongRed,
+                                                                                                        color: Flights_Colours.strongRed,
                                                                                                       ),
                                                                                                     ),
                                                                                                     const SizedBox(
@@ -1187,7 +1195,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.add,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -1240,7 +1248,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                         elevation: 0.0,
                                                                                         shape: RoundedRectangleBorder(
                                                                                           side: BorderSide(
-                                                                                            color: Colours.strongRed,
+                                                                                            color: Flights_Colours.strongRed,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(10),
                                                                                         ),
@@ -1264,7 +1272,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.remove,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -1284,7 +1292,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                         fontFamily: "Poppins",
                                                                                                         fontWeight: FontWeight.w700,
                                                                                                         fontSize: 16.0,
-                                                                                                        color: Colours.strongRed,
+                                                                                                        color: Flights_Colours.strongRed,
                                                                                                       ),
                                                                                                     ),
                                                                                                     const SizedBox(
@@ -1293,7 +1301,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.add,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -1343,7 +1351,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                         elevation: 0.0,
                                                                                         shape: RoundedRectangleBorder(
                                                                                           side: BorderSide(
-                                                                                            color: Colours.strongRed,
+                                                                                            color: Flights_Colours.strongRed,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(10),
                                                                                         ),
@@ -1367,7 +1375,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.remove,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -1387,7 +1395,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                         fontFamily: "Poppins",
                                                                                                         fontWeight: FontWeight.w700,
                                                                                                         fontSize: 16.0,
-                                                                                                        color: Colours.strongRed,
+                                                                                                        color: Flights_Colours.strongRed,
                                                                                                       ),
                                                                                                     ),
                                                                                                     const SizedBox(
@@ -1396,7 +1404,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.add,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -1431,7 +1439,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                 Text('CHOOSE CABIN CLASS',
                                                                                     style: TextStyle(
                                                                                       fontSize: 14.0,
-                                                                                      color: Colours.strongRed,
+                                                                                      color: Flights_Colours.strongRed,
                                                                                       fontWeight: FontWeight.bold,
                                                                                       fontFamily: 'Poppins',
                                                                                     )),
@@ -1449,7 +1457,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                               side: BorderSide(
                                                                                                 width: 1.0,
                                                                                                 // color: Color(0xffFF6700),
-                                                                                                color: _selectedTrip == "eco" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                                color: _selectedTrip == "eco" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                               )),
                                                                                           backgroundColor: _selectedTrip == "eco" ? Colors.orange[50] : Colors.white,
                                                                                           fixedSize: const Size(110, 35),
@@ -1465,11 +1473,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           if (_selectedTrip == "eco")
                                                                                             Icon(
                                                                                               Icons.check_circle,
-                                                                                              color: Colours.strongRed,
+                                                                                              color: Flights_Colours.strongRed,
                                                                                             ),
                                                                                           Text(
                                                                                             "Economy",
-                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "eco" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "eco" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                           )
                                                                                         ],
                                                                                       ),
@@ -1491,7 +1499,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                               side: BorderSide(
                                                                                                 width: 1.0,
                                                                                                 // color: Color(0xffFF6700),
-                                                                                                color: _selectedTrip == "businessclass" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                                color: _selectedTrip == "businessclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                               )),
                                                                                           backgroundColor: _selectedTrip == "businessclass" ? Colors.orange[50] : Colors.white,
                                                                                           fixedSize: const Size(150, 35),
@@ -1507,11 +1515,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           if (_selectedTrip == "businessclass")
                                                                                             Icon(
                                                                                               Icons.check_circle,
-                                                                                              color: Colours.strongRed,
+                                                                                              color: Flights_Colours.strongRed,
                                                                                             ),
                                                                                           Text(
                                                                                             "Business Class",
-                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "businessclass" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "businessclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                           )
                                                                                         ],
                                                                                       ),
@@ -1530,7 +1538,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                               borderRadius: BorderRadius.circular(10),
                                                                                               side: BorderSide(
                                                                                                 width: 1.0,
-                                                                                                color: _selectedTrip == "firstclass" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                                color: _selectedTrip == "firstclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                               )),
                                                                                           backgroundColor: _selectedTrip == "firstclass" ? Colors.orange[50] : Colors.white,
                                                                                           fixedSize: const Size(150, 35),
@@ -1546,11 +1554,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           if (_selectedTrip == "firstclass")
                                                                                             Icon(
                                                                                               Icons.check_circle,
-                                                                                              color: Colours.strongRed,
+                                                                                              color: Flights_Colours.strongRed,
                                                                                             ),
                                                                                           Text(
                                                                                             "First Class",
-                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "firstclass" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "firstclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                           )
                                                                                         ],
                                                                                       ),
@@ -1569,7 +1577,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           side: BorderSide(
                                                                                             width: 1.0,
                                                                                             // color: Color(0xffFF6700),
-                                                                                            color: _selectedTrip == "ecopri" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                            color: _selectedTrip == "ecopri" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                           )),
                                                                                       backgroundColor: _selectedTrip == "ecopri" ? Colors.orange[50] : Colors.white,
                                                                                       fixedSize: const Size(250, 35),
@@ -1585,11 +1593,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                       if (_selectedTrip == "ecopri")
                                                                                         Icon(
                                                                                           Icons.check_circle,
-                                                                                          color: Colours.strongRed,
+                                                                                          color: Flights_Colours.strongRed,
                                                                                         ),
                                                                                       Text(
                                                                                         "Economy/Premium Economy",
-                                                                                        style: TextStyle(fontSize: 12, color: _selectedTrip == "ecopri" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                        style: TextStyle(fontSize: 12, color: _selectedTrip == "ecopri" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                       )
                                                                                     ],
                                                                                   ),
@@ -1612,7 +1620,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                             shape: RoundedRectangleBorder(
                                                                                               borderRadius: BorderRadius.circular(10),
                                                                                             ),
-                                                                                            backgroundColor: Colours.strongRed,
+                                                                                            backgroundColor: Flights_Colours.strongRed,
                                                                                             fixedSize: const Size(330, 48),
                                                                                             textStyle: const TextStyle(
                                                                                               fontSize: 14.0,
@@ -1666,7 +1674,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                               Icon(
                                                 Icons.person,
                                                 size: 24,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               const SizedBox(
                                                 width: 10,
@@ -1681,7 +1690,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "TRAVELLERS & CLASS",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -1792,7 +1802,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                               10),
                                                     ),
                                                     backgroundColor:
-                                                        Colours.strongRed,
+                                                        Flights_Colours
+                                                            .strongRed,
                                                     fixedSize:
                                                         const Size(330, 48),
                                                     textStyle: const TextStyle(
@@ -1848,7 +1859,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                             Icon(
                                               Icons.flight_takeoff,
                                               size: 30,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                             ),
                                             const SizedBox(
                                               width: 10,
@@ -1884,8 +1895,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                         "FROM",
                                                         style: TextStyle(
                                                           fontSize: 12.0,
-                                                          color:
-                                                              Colours.strongRed,
+                                                          color: Flights_Colours
+                                                              .strongRed,
                                                           fontFamily: 'Poppins',
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -1968,7 +1979,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                             Icon(
                                               Icons.flight_land,
                                               size: 30,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                             ),
                                             const SizedBox(
                                               width: 10,
@@ -1995,7 +2006,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "TO",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -2079,7 +2091,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                               Icon(
                                                 Icons.calendar_today,
                                                 size: 24,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               const SizedBox(
                                                 width: 10,
@@ -2094,7 +2107,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "DEPARTURE DATE",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -2143,7 +2157,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     Icon(
                                                       Icons.calendar_today,
                                                       size: 24,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                     ),
                                                     const SizedBox(
                                                       width: 10,
@@ -2160,8 +2175,9 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                           "RETURN DATE",
                                                           style: TextStyle(
                                                             fontSize: 12.0,
-                                                            color: Colours
-                                                                .strongRed,
+                                                            color:
+                                                                Flights_Colours
+                                                                    .strongRed,
                                                             fontWeight:
                                                                 FontWeight.bold,
                                                             fontFamily:
@@ -2205,7 +2221,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     Icon(
                                                       Icons.calendar_today,
                                                       size: 24,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                     ),
                                                     const SizedBox(
                                                       width: 10,
@@ -2224,8 +2241,9 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                             fontSize: 12.0,
                                                             fontWeight:
                                                                 FontWeight.bold,
-                                                            color: Colours
-                                                                .strongRed,
+                                                            color:
+                                                                Flights_Colours
+                                                                    .strongRed,
                                                             fontFamily:
                                                                 'Poppins',
                                                           ),
@@ -2312,7 +2330,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                               IconButton(
                                                                                 icon: Icon(
                                                                                   Icons.close,
-                                                                                  color: Colours.strongRed,
+                                                                                  color: Flights_Colours.strongRed,
                                                                                   size: 24,
                                                                                 ),
                                                                                 onPressed: () {
@@ -2322,7 +2340,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                               Text('ADD NUMBER OF TRAVELLERS',
                                                                                   style: TextStyle(
                                                                                     fontSize: 14.0,
-                                                                                    color: Colours.strongRed,
+                                                                                    color: Flights_Colours.strongRed,
                                                                                     fontWeight: FontWeight.bold,
                                                                                     fontFamily: 'Poppins',
                                                                                   )),
@@ -2379,7 +2397,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                         elevation: 0.0,
                                                                                         shape: RoundedRectangleBorder(
                                                                                           side: BorderSide(
-                                                                                            color: Colours.strongRed,
+                                                                                            color: Flights_Colours.strongRed,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(10),
                                                                                         ),
@@ -2403,7 +2421,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.remove,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -2423,7 +2441,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                         fontFamily: "Poppins",
                                                                                                         fontWeight: FontWeight.w700,
                                                                                                         fontSize: 16.0,
-                                                                                                        color: Colours.strongRed,
+                                                                                                        color: Flights_Colours.strongRed,
                                                                                                       ),
                                                                                                     ),
                                                                                                     const SizedBox(
@@ -2432,7 +2450,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.add,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -2485,7 +2503,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                         elevation: 0.0,
                                                                                         shape: RoundedRectangleBorder(
                                                                                           side: BorderSide(
-                                                                                            color: Colours.strongRed,
+                                                                                            color: Flights_Colours.strongRed,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(10),
                                                                                         ),
@@ -2509,7 +2527,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.remove,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -2529,7 +2547,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                         fontFamily: "Poppins",
                                                                                                         fontWeight: FontWeight.w700,
                                                                                                         fontSize: 16.0,
-                                                                                                        color: Colours.strongRed,
+                                                                                                        color: Flights_Colours.strongRed,
                                                                                                       ),
                                                                                                     ),
                                                                                                     const SizedBox(
@@ -2538,7 +2556,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.add,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -2588,7 +2606,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                         elevation: 0.0,
                                                                                         shape: RoundedRectangleBorder(
                                                                                           side: BorderSide(
-                                                                                            color: Colours.strongRed,
+                                                                                            color: Flights_Colours.strongRed,
                                                                                           ),
                                                                                           borderRadius: BorderRadius.circular(10),
                                                                                         ),
@@ -2612,7 +2630,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.remove,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -2632,7 +2650,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                         fontFamily: "Poppins",
                                                                                                         fontWeight: FontWeight.w700,
                                                                                                         fontSize: 16.0,
-                                                                                                        color: Colours.strongRed,
+                                                                                                        color: Flights_Colours.strongRed,
                                                                                                       ),
                                                                                                     ),
                                                                                                     const SizedBox(
@@ -2641,7 +2659,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                                     IconButton(
                                                                                                       icon: Icon(
                                                                                                         Icons.add,
-                                                                                                        color: Colours.dardModerateBlue,
+                                                                                                        color: Flights_Colours.dardModerateBlue,
                                                                                                         size: 24,
                                                                                                       ),
                                                                                                       onPressed: () {
@@ -2676,7 +2694,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                 Text('CHOOSE CABIN CLASS',
                                                                                     style: TextStyle(
                                                                                       fontSize: 14.0,
-                                                                                      color: Colours.strongRed,
+                                                                                      color: Flights_Colours.strongRed,
                                                                                       fontWeight: FontWeight.bold,
                                                                                       fontFamily: 'Poppins',
                                                                                     )),
@@ -2694,7 +2712,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                               side: BorderSide(
                                                                                                 width: 1.0,
                                                                                                 // color: Color(0xffFF6700),
-                                                                                                color: _selectedTrip == "eco" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                                color: _selectedTrip == "eco" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                               )),
                                                                                           backgroundColor: _selectedTrip == "eco" ? Colors.orange[50] : Colors.white,
                                                                                           fixedSize: const Size(110, 35),
@@ -2710,11 +2728,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           if (_selectedTrip == "eco")
                                                                                             Icon(
                                                                                               Icons.check_circle,
-                                                                                              color: Colours.strongRed,
+                                                                                              color: Flights_Colours.strongRed,
                                                                                             ),
                                                                                           Text(
                                                                                             "Economy",
-                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "eco" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "eco" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                           )
                                                                                         ],
                                                                                       ),
@@ -2736,7 +2754,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                               side: BorderSide(
                                                                                                 width: 1.0,
                                                                                                 // color: Color(0xffFF6700),
-                                                                                                color: _selectedTrip == "businessclass" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                                color: _selectedTrip == "businessclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                               )),
                                                                                           backgroundColor: _selectedTrip == "businessclass" ? Colors.orange[50] : Colors.white,
                                                                                           fixedSize: const Size(150, 35),
@@ -2752,11 +2770,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           if (_selectedTrip == "businessclass")
                                                                                             Icon(
                                                                                               Icons.check_circle,
-                                                                                              color: Colours.strongRed,
+                                                                                              color: Flights_Colours.strongRed,
                                                                                             ),
                                                                                           Text(
                                                                                             "Business Class",
-                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "businessclass" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "businessclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                           )
                                                                                         ],
                                                                                       ),
@@ -2775,7 +2793,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                               borderRadius: BorderRadius.circular(10),
                                                                                               side: BorderSide(
                                                                                                 width: 1.0,
-                                                                                                color: _selectedTrip == "firstclass" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                                color: _selectedTrip == "firstclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                               )),
                                                                                           backgroundColor: _selectedTrip == "firstclass" ? Colors.orange[50] : Colors.white,
                                                                                           fixedSize: const Size(150, 35),
@@ -2791,11 +2809,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           if (_selectedTrip == "firstclass")
                                                                                             Icon(
                                                                                               Icons.check_circle,
-                                                                                              color: Colours.strongRed,
+                                                                                              color: Flights_Colours.strongRed,
                                                                                             ),
                                                                                           Text(
                                                                                             "First Class",
-                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "firstclass" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                            style: TextStyle(fontSize: 12, color: _selectedTrip == "firstclass" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                           )
                                                                                         ],
                                                                                       ),
@@ -2814,7 +2832,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                           side: BorderSide(
                                                                                             width: 1.0,
                                                                                             // color: Color(0xffFF6700),
-                                                                                            color: _selectedTrip == "ecopri" ? Colours.strongRed : Colours.veryDarkGrey,
+                                                                                            color: _selectedTrip == "ecopri" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey,
                                                                                           )),
                                                                                       backgroundColor: _selectedTrip == "ecopri" ? Colors.orange[50] : Colors.white,
                                                                                       fixedSize: const Size(250, 35),
@@ -2830,11 +2848,11 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                       if (_selectedTrip == "ecopri")
                                                                                         Icon(
                                                                                           Icons.check_circle,
-                                                                                          color: Colours.strongRed,
+                                                                                          color: Flights_Colours.strongRed,
                                                                                         ),
                                                                                       Text(
                                                                                         "Economy/Premium Economy",
-                                                                                        style: TextStyle(fontSize: 12, color: _selectedTrip == "ecopri" ? Colours.strongRed : Colours.veryDarkGrey, fontWeight: FontWeight.bold),
+                                                                                        style: TextStyle(fontSize: 12, color: _selectedTrip == "ecopri" ? Flights_Colours.strongRed : Flights_Colours.veryDarkGrey, fontWeight: FontWeight.bold),
                                                                                       )
                                                                                     ],
                                                                                   ),
@@ -2853,7 +2871,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                                                             shape: RoundedRectangleBorder(
                                                                                               borderRadius: BorderRadius.circular(10),
                                                                                             ),
-                                                                                            backgroundColor: Colours.strongRed,
+                                                                                            backgroundColor: Flights_Colours.strongRed,
                                                                                             fixedSize: const Size(330, 48),
                                                                                             textStyle: const TextStyle(
                                                                                               fontSize: 14.0,
@@ -2907,7 +2925,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                               Icon(
                                                 Icons.person,
                                                 size: 24,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               const SizedBox(
                                                 width: 10,
@@ -2922,7 +2941,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                     "TRAVELLERS & CLASS",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -3064,7 +3084,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                                               10),
                                                     ),
                                                     backgroundColor:
-                                                        Colours.strongRed,
+                                                        Flights_Colours
+                                                            .strongRed,
                                                     fixedSize:
                                                         const Size(330, 48),
                                                     textStyle: const TextStyle(
@@ -3162,7 +3183,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                         Text(
                                           "BEST PRICE GUARANTED",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.dardModerateBlue,
+                                              color: Flights_Colours
+                                                  .dardModerateBlue,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -3223,7 +3245,8 @@ class _FlightsListPageState extends State<FlightsListPage> {
                                         Text(
                                           "24*7 SUPPORT",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.dardModerateBlue,
+                                              color: Flights_Colours
+                                                  .dardModerateBlue,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -3283,7 +3306,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                     Text(
                       "Travel for less with our great deals",
                       style: GoogleFonts.poppins(
-                          color: Colours.strongRed,
+                          color: Flights_Colours.strongRed,
                           fontSize: 20,
                           fontWeight: FontWeight.w600),
                     ),
@@ -3359,7 +3382,7 @@ class _FlightsListPageState extends State<FlightsListPage> {
                       Text(
                         "Why AnjMal ?",
                         style: GoogleFonts.poppins(
-                            color: Colours.strongRed,
+                            color: Flights_Colours.strongRed,
                             fontSize: 22,
                             fontWeight: FontWeight.w600),
                       ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:outc/widgets/colors/colors.dart';
+import 'package:outc/dashboard/cars/widgets/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class SelectPickUp extends StatefulWidget {
@@ -30,7 +31,7 @@ class _SelectPickUpState extends State<SelectPickUp> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -42,11 +43,11 @@ class _SelectPickUpState extends State<SelectPickUp> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Cars_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -77,7 +78,7 @@ class _SelectPickUpState extends State<SelectPickUp> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Cars_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -94,7 +95,7 @@ class _SelectPickUpState extends State<SelectPickUp> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -115,7 +116,7 @@ class _SelectPickUpState extends State<SelectPickUp> {
               Container(
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(5),
-                    border: Border.all(color: Colours.strongRed)),
+                    border: Border.all(color: Cars_Colours.strongRed)),
                 height: 40,
                 width: double.infinity,
                 child: DropdownButtonHideUnderline(

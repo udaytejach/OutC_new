@@ -20,7 +20,7 @@ dependencies:
   intl: ^0.19.0
   encrypt: ^5.0.1
   encryptor: ^0.0.1
-  encrypto_flutter: ^1.2.1
+  # encrypto_flutter: ^1.2.1
   cryptology: ^0.0.6
   http: 
   json_annotation: ^4.8.1

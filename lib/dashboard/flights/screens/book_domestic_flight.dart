@@ -10,10 +10,12 @@ import 'package:outc/dashboard/flights/models/flight_price_model.dart'
     as flightPrice;
 import 'package:outc/dashboard/flights/models/flightranjith.dart';
 import 'package:outc/dashboard/flights/screens/ticketView.dart';
+import 'package:outc/dashboard/flights/widgets/colors.dart';
+import 'package:outc/dashboard/flights/widgets/progressbar.dart';
 import 'package:outc/services/api_services_list.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:outc/widgets/components/toast.dart';
-import 'package:outc/widgets/progressbar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 import 'package:http/http.dart' as http;
 
@@ -404,7 +406,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
 
   @override
   Widget build(BuildContext context) {
-    return ProgressBar(
+    return Flight_ProgressBar(
       inAsyncCall: isApiCallProcess,
       opacity: 0.3,
       child: uiSetup(context),
@@ -460,7 +462,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                           padding: const EdgeInsets.all(8.0),
                           child: Icon(
                             Icons.arrow_back_ios_new_outlined,
-                            color: Colours.veryDarkGrey,
+                            color: Flights_Colours.veryDarkGrey,
                             // color: Colors.transparent,
                             size: 20,
                           ),
@@ -475,7 +477,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                         style: TextStyle(
                             fontFamily: 'poppins',
                             fontSize: 16.0,
-                            color: Colours.strongRed,
+                            color: Flights_Colours.strongRed,
                             fontWeight: FontWeight.w700),
                       ),
                       const Padding(
@@ -542,7 +544,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                                             widget.airlineName1,
                                             style: TextStyle(
                                               fontSize: 14.0,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontFamily: 'Poppins',
                                             ),
                                           ),
@@ -579,7 +581,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                                   widget.airlineRefund1,
                                   style: TextStyle(
                                     fontSize: 12.0,
-                                    color: Colours.veryDarkGrey,
+                                    color: Flights_Colours.veryDarkGrey,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Poppins',
                                   ),
@@ -601,7 +603,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                                       SizedBox(
                                         width: 150,
                                         child: Divider(
-                                          color: Colours.strongRed,
+                                          color: Flights_Colours.strongRed,
                                           thickness: 3,
                                         ),
                                       ),
@@ -735,7 +737,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                                             widget.airlineName2,
                                             style: TextStyle(
                                               fontSize: 14.0,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontFamily: 'Poppins',
                                             ),
                                           ),
@@ -772,7 +774,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                                   widget.airlineRefund2,
                                   style: TextStyle(
                                     fontSize: 12.0,
-                                    color: Colours.veryDarkGrey,
+                                    color: Flights_Colours.veryDarkGrey,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Poppins',
                                   ),
@@ -794,7 +796,7 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                                       SizedBox(
                                         width: 150,
                                         child: Divider(
-                                          color: Colours.strongRed,
+                                          color: Flights_Colours.strongRed,
                                           thickness: 3,
                                         ),
                                       ),
@@ -971,7 +973,8 @@ class _BookDomesticFlightState extends State<BookDomesticFlight> {
                                                     color: Color(0xffC2C2C2))),
                                             hintText: 'Enter Mobile Number',
                                             hintStyle: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.w500),
                                             prefixIcon: Padding(

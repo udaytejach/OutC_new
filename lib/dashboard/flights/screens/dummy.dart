@@ -4,11 +4,13 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/flights/models/flights_list_model.dart';
 import 'package:outc/dashboard/flights/providers/oneway_provider.dart';
+import 'package:outc/dashboard/flights/widgets/colors.dart';
+import 'package:outc/dashboard/flights/widgets/progress_bar.dart';
+import 'package:outc/dashboard/flights/widgets/progressbar.dart';
 import 'package:outc/load_data/api_response.dart';
 
 import 'package:outc/sidemenu/sidemenu.dart';
-import 'package:outc/widgets/colors/colors.dart';
-import 'package:outc/widgets/progress_bar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
@@ -46,7 +48,7 @@ class _OneWayFlightDetailspageState extends State<OneWayFlightDetailspage> {
             style: TextStyle(
               fontSize: 22.0,
               fontFamily: 'poppins',
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
             ),
           ),
           backgroundColor: Colors.white,
@@ -56,8 +58,8 @@ class _OneWayFlightDetailspageState extends State<OneWayFlightDetailspage> {
           leading: Padding(
             padding: const EdgeInsets.all(8),
             child: Avatar(
-              backgroundColor: Colours.strongRed,
-              placeholderColors: [Colours.strongRed],
+              backgroundColor: Flights_Colours.strongRed,
+              placeholderColors: [Flights_Colours.strongRed],
               useCache: true,
 
               onTap: () {
@@ -77,11 +79,11 @@ class _OneWayFlightDetailspageState extends State<OneWayFlightDetailspage> {
             Padding(
               padding: const EdgeInsets.all(4.0),
               child: IconButton(
-                color: Colours.strongRed,
+                color: Flights_Colours.strongRed,
                 icon: Icon(
                   Icons.wallet,
                   size: 28,
-                  color: Colours.strongRed,
+                  color: Flights_Colours.strongRed,
                 ),
                 onPressed: () {
                   showDialog(
@@ -110,7 +112,7 @@ class _OneWayFlightDetailspageState extends State<OneWayFlightDetailspage> {
                                   "INR ${SharedPrefServices.getwalletblc()}",
                                   style: TextStyle(
                                     fontSize: 20.0,
-                                    color: Colours.strongRed,
+                                    color: Flights_Colours.strongRed,
                                     fontFamily: 'Poppins',
                                     // fontWeight: FontWeight.w700,
                                   ),
@@ -127,7 +129,7 @@ class _OneWayFlightDetailspageState extends State<OneWayFlightDetailspage> {
               ),
             ),
             IconButton(
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
               icon: const ImageIcon(
                 AssetImage(
                   "images/notifybell.png",
@@ -147,7 +149,7 @@ class _OneWayFlightDetailspageState extends State<OneWayFlightDetailspage> {
                   return FittedBox(
                       child: Text(instance?.errorMessage ?? "error"));
                 } else if (instance?.status == Status.loading) {
-                  return const Expanded(child: ProgressBarHUD());
+                  return const Expanded(child: Flights_ProgressBarHUD());
                 } else if (instance?.status == Status.completed) {
                   List oneWaydata = instance?.data?.data?.flightDetails ?? [];
                   return oneWaydata.isEmpty
@@ -179,7 +181,7 @@ class _OneWayFlightDetailspageState extends State<OneWayFlightDetailspage> {
                         );
                 } else {
                   return const Expanded(
-                    child: ProgressBarHUD(),
+                    child: Flights_ProgressBarHUD(),
                   );
                 }
               },

@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/dashboard.dart';
 import 'package:outc/dashboard/flights/models/one_way_book_response.dart';
-import 'package:outc/dashboard/flights/screens/dummy.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
+import 'package:outc/dashboard/flights/widgets/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class TicketView extends StatefulWidget {
@@ -71,7 +72,7 @@ class _TicketViewState extends State<TicketView> {
             style: TextStyle(
               fontSize: 22.0,
               fontFamily: 'poppins',
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
             ),
           ),
           backgroundColor: Colors.white,
@@ -81,11 +82,11 @@ class _TicketViewState extends State<TicketView> {
           leading: Padding(
               padding: const EdgeInsets.all(8),
               child: IconButton(
-                color: Colours.strongRed,
+                color: Flights_Colours.strongRed,
                 icon: Icon(
                   Icons.home,
                   size: 28,
-                  color: Colours.strongRed,
+                  color: Flights_Colours.strongRed,
                 ),
                 onPressed: () {
                   Navigator.of(context).push(
@@ -101,11 +102,11 @@ class _TicketViewState extends State<TicketView> {
             Padding(
               padding: const EdgeInsets.all(4.0),
               child: IconButton(
-                color: Colours.strongRed,
+                color: Flights_Colours.strongRed,
                 icon: Icon(
                   Icons.wallet,
                   size: 28,
-                  color: Colours.strongRed,
+                  color: Flights_Colours.strongRed,
                 ),
                 onPressed: () {
                   showDialog(
@@ -136,7 +137,7 @@ class _TicketViewState extends State<TicketView> {
                                   "INR ${SharedPrefServices.getwalletblc()}",
                                   style: TextStyle(
                                     fontSize: 20.0,
-                                    color: Colours.strongRed,
+                                    color: Flights_Colours.strongRed,
                                     fontFamily: 'Poppins',
                                     // fontWeight: FontWeight.w700,
                                   ),
@@ -153,7 +154,7 @@ class _TicketViewState extends State<TicketView> {
               ),
             ),
             IconButton(
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
               icon: const ImageIcon(
                 AssetImage(
                   "images/notifybell.png",

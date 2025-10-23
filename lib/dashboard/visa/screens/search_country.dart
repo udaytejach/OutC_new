@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:http/http.dart' as http;
 import 'package:outc/dashboard/dashboard.dart';
+
 import 'package:outc/dashboard/visa/models/get_visas_model.dart';
 import 'package:outc/dashboard/visa/screens/country_list.dart';
 import 'package:outc/dashboard/visa/screens/visa_getLists.dart';
 import 'package:outc/dashboard/visa/screens/visa_guidelinespage.dart';
-import 'package:outc/widgets/colors/colors.dart';
-import 'package:outc/widgets/progress_bar.dart';
+import 'package:outc/dashboard/visa/widgets/colors.dart';
+import 'package:outc/dashboard/visa/widgets/progress_bar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class SearchCountry extends StatefulWidget {
@@ -51,7 +53,7 @@ class _SearchCountryState extends State<SearchCountry> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -61,11 +63,11 @@ class _SearchCountryState extends State<SearchCountry> {
         leading: Padding(
             padding: const EdgeInsets.all(8),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Visa_Colours.strongRed,
               icon: Icon(
                 Icons.home,
                 size: 28,
-                color: Colours.strongRed,
+                color: Visa_Colours.strongRed,
               ),
               onPressed: () {
                 Navigator.of(context).push(
@@ -81,11 +83,11 @@ class _SearchCountryState extends State<SearchCountry> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Visa_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Visa_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -116,7 +118,7 @@ class _SearchCountryState extends State<SearchCountry> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Visa_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -133,7 +135,7 @@ class _SearchCountryState extends State<SearchCountry> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -198,7 +200,7 @@ class _SearchCountryState extends State<SearchCountry> {
                     child: Text(
                       'Visa Guidelines',
                       style: GoogleFonts.poppins(
-                        color: Colours.strongRed,
+                        color: Visa_Colours.strongRed,
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
                       ),
@@ -210,7 +212,7 @@ class _SearchCountryState extends State<SearchCountry> {
                   child: Text(
                     'We make visas easy for you ',
                     style: GoogleFonts.poppins(
-                      color: Colours.dardModerateBlue,
+                      color: Visa_Colours.dardModerateBlue,
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
                     ),
@@ -231,16 +233,17 @@ class _SearchCountryState extends State<SearchCountry> {
                     decoration: InputDecoration(
                       labelText: 'Search For A Country',
                       labelStyle: TextStyle(
-                          color: Colours.strongRed,
+                          color: Visa_Colours.strongRed,
                           fontFamily: 'Helvetica Neue',
                           fontSize: 14,
                           fontWeight: FontWeight.w500),
                       enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colours.strongRed),
+                        borderSide: BorderSide(color: Visa_Colours.strongRed),
                         borderRadius: BorderRadius.circular(10),
                       ),
                       border: OutlineInputBorder(
-                          borderSide: BorderSide(color: Colours.strongRed)),
+                          borderSide:
+                              BorderSide(color: Visa_Colours.strongRed)),
                     ),
                   ),
                 ),
@@ -305,7 +308,7 @@ class _SearchCountryState extends State<SearchCountry> {
           ),
           if (isLoading)
             const Center(
-              child: ProgressBarHUD(),
+              child: Visa_ProgressBarHUD(),
             ),
         ]),
       ),

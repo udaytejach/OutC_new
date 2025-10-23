@@ -2,10 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/cars/screens/select_pickUp_location.dart';
+import 'package:outc/dashboard/cars/widgets/colors.dart';
 import 'package:outc/dashboard/dashboard.dart';
 import 'package:outc/dashboard/flights/screens/from_city_dropdown.dart';
 import 'package:outc/dashboard/flights/screens/to_city_dropdown.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class SearchCarsPage extends StatefulWidget {
@@ -49,7 +50,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -59,11 +60,11 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
         leading: Padding(
             padding: const EdgeInsets.all(8),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
               icon: Icon(
                 Icons.home,
                 size: 28,
-                color: Colours.strongRed,
+                color: Cars_Colours.strongRed,
               ),
               onPressed: () {
                 Navigator.of(context).push(
@@ -79,11 +80,11 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Cars_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -114,7 +115,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Cars_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -131,7 +132,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -200,11 +201,11 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                                 side: BorderSide(
                                   width: 1.0,
                                   color: selectScroller == "local"
-                                      ? Colours.strongRed
+                                      ? Cars_Colours.strongRed
                                       : Colors.white,
                                 )),
                             backgroundColor: selectScroller == "local"
-                                ? Colours.strongRed
+                                ? Cars_Colours.strongRed
                                 : Colors.white,
                             fixedSize: const Size(105, 35),
                             textStyle: const TextStyle(
@@ -241,11 +242,11 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                                   width: 1.0,
                                   // color: Color(0xffFF6700),
                                   color: selectScroller == "outstation"
-                                      ? Colours.strongRed
+                                      ? Cars_Colours.strongRed
                                       : Colors.white,
                                 )),
                             backgroundColor: selectScroller == "outstation"
-                                ? Colours.strongRed
+                                ? Cars_Colours.strongRed
                                 : Colors.white,
                             fixedSize: const Size(105, 35),
                             textStyle: const TextStyle(
@@ -279,11 +280,11 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                                 side: BorderSide(
                                   width: 1.0,
                                   color: selectScroller == "transfer"
-                                      ? Colours.strongRed
+                                      ? Cars_Colours.strongRed
                                       : Colors.white,
                                 )),
                             backgroundColor: selectScroller == "transfer"
-                                ? Colours.strongRed
+                                ? Cars_Colours.strongRed
                                 : Colors.white,
                             fixedSize: const Size(105, 35),
                             textStyle: const TextStyle(
@@ -368,7 +369,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Icon(
             Icons.directions_car,
             size: 30,
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
           const SizedBox(
             width: 10,
@@ -395,7 +396,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                       "FROM",
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: Colours.strongRed,
+                        color: Cars_Colours.strongRed,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                       ),
@@ -461,7 +462,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             Icon(
               Icons.calendar_today,
               size: 24,
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
             ),
             const SizedBox(
               width: 10,
@@ -474,7 +475,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   "FROM DATE",
                   style: TextStyle(
                     fontSize: 12.0,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins',
                   ),
@@ -513,7 +514,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             Icon(
               Icons.timer,
               size: 24,
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
             ),
             const SizedBox(
               width: 10,
@@ -526,7 +527,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   "START TIME",
                   style: TextStyle(
                     fontSize: 12.0,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins',
                   ),
@@ -560,7 +561,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              backgroundColor: Colours.strongRed,
+              backgroundColor: Cars_Colours.strongRed,
               fixedSize: const Size(330, 48),
               textStyle: const TextStyle(
                 fontSize: 14.0,
@@ -601,7 +602,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Icon(
             Icons.directions_car,
             size: 30,
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
           const SizedBox(
             width: 10,
@@ -628,7 +629,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                       "FROM",
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: Colours.strongRed,
+                        color: Cars_Colours.strongRed,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                       ),
@@ -690,7 +691,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Icon(
             Icons.directions_car,
             size: 30,
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
           const SizedBox(
             width: 10,
@@ -717,7 +718,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                       "TO",
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: Colours.strongRed,
+                        color: Cars_Colours.strongRed,
                         fontWeight: FontWeight.bold,
                         fontFamily: 'Poppins',
                       ),
@@ -783,7 +784,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             Icon(
               Icons.calendar_today,
               size: 24,
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
             ),
             const SizedBox(
               width: 10,
@@ -796,7 +797,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   "FROM DATE",
                   style: TextStyle(
                     fontSize: 12.0,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins',
                   ),
@@ -837,7 +838,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   Icon(
                     Icons.calendar_today,
                     size: 24,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                   ),
                   const SizedBox(
                     width: 10,
@@ -850,7 +851,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                         "TO DATE",
                         style: TextStyle(
                           fontSize: 12.0,
-                          color: Colours.strongRed,
+                          color: Cars_Colours.strongRed,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Poppins',
                         ),
@@ -892,7 +893,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             Icon(
               Icons.timer,
               size: 24,
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
             ),
             const SizedBox(
               width: 10,
@@ -905,7 +906,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   "START TIME",
                   style: TextStyle(
                     fontSize: 12.0,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins',
                   ),
@@ -939,7 +940,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              backgroundColor: Colours.strongRed,
+              backgroundColor: Cars_Colours.strongRed,
               fixedSize: const Size(330, 48),
               textStyle: const TextStyle(
                 fontSize: 14.0,
@@ -984,7 +985,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             Icon(
               Icons.location_city,
               size: 30,
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
             ),
             const SizedBox(
               width: 10,
@@ -997,7 +998,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   "Enter City Name",
                   style: TextStyle(
                     fontSize: 12.0,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                     fontFamily: 'Poppins',
                     fontWeight: FontWeight.bold,
                   ),
@@ -1047,7 +1048,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Icon(
             Icons.location_on,
             size: 30,
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
           const SizedBox(
             width: 10,
@@ -1079,7 +1080,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                       "Pick Up",
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: Colours.strongRed,
+                        color: Cars_Colours.strongRed,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                       ),
@@ -1117,7 +1118,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Icon(
             Icons.location_on,
             size: 30,
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
           const SizedBox(
             width: 10,
@@ -1149,7 +1150,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                       "Pick Up Location",
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: Colours.strongRed,
+                        color: Cars_Colours.strongRed,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                       ),
@@ -1187,7 +1188,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Icon(
             Icons.location_on,
             size: 30,
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
           const SizedBox(
             width: 10,
@@ -1219,7 +1220,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                       "Drop Off",
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: Colours.strongRed,
+                        color: Cars_Colours.strongRed,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                       ),
@@ -1257,7 +1258,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
           Icon(
             Icons.location_on,
             size: 30,
-            color: Colours.strongRed,
+            color: Cars_Colours.strongRed,
           ),
           const SizedBox(
             width: 10,
@@ -1289,7 +1290,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                       "Drop Location",
                       style: TextStyle(
                         fontSize: 12.0,
-                        color: Colours.strongRed,
+                        color: Cars_Colours.strongRed,
                         fontFamily: 'Poppins',
                         fontWeight: FontWeight.bold,
                       ),
@@ -1331,7 +1332,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             Icon(
               Icons.calendar_today,
               size: 24,
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
             ),
             const SizedBox(
               width: 10,
@@ -1344,7 +1345,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   "FROM DATE",
                   style: TextStyle(
                     fontSize: 12.0,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins',
                   ),
@@ -1383,7 +1384,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
             Icon(
               Icons.timer,
               size: 24,
-              color: Colours.strongRed,
+              color: Cars_Colours.strongRed,
             ),
             const SizedBox(
               width: 10,
@@ -1396,7 +1397,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
                   "START TIME",
                   style: TextStyle(
                     fontSize: 12.0,
-                    color: Colours.strongRed,
+                    color: Cars_Colours.strongRed,
                     fontWeight: FontWeight.bold,
                     fontFamily: 'Poppins',
                   ),
@@ -1430,7 +1431,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10),
               ),
-              backgroundColor: Colours.strongRed,
+              backgroundColor: Cars_Colours.strongRed,
               fixedSize: const Size(330, 48),
               textStyle: const TextStyle(
                 fontSize: 14.0,
@@ -1455,7 +1456,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
   Widget buildCard(int index, String text) {
     return Card(
       elevation: 0,
-      color: isSelected[index] ? Colors.blue : Colours.strongRed,
+      color: isSelected[index] ? Colors.blue : Cars_Colours.strongRed,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),
@@ -1499,7 +1500,7 @@ class _SearchCarsPageState extends State<SearchCarsPage> {
   Widget buildTrip(int index, String text) {
     return Card(
       elevation: 0,
-      color: isSelectedTrip[index] ? Colors.blue : Colours.strongRed,
+      color: isSelectedTrip[index] ? Colors.blue : Cars_Colours.strongRed,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
       child: Container(
         decoration: BoxDecoration(borderRadius: BorderRadius.circular(10)),

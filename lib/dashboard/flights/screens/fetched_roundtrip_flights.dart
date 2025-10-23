@@ -3,10 +3,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/flights/models/flight_roundtrip_model.dart';
 import 'package:outc/dashboard/flights/screens/book_flight_formpage.dart';
+import 'package:outc/dashboard/flights/widgets/colors.dart';
 import 'package:outc/dashboard/flights/widgets/ticketdesign.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
-import 'package:ticket_widget/ticket_widget.dart';
 
 class FetchedRoundtripFlights extends StatefulWidget {
   List<FlightDetailFlightDetail>? fulldata;
@@ -103,7 +103,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colours.veryDarkGrey,
+                        color: Flights_Colours.veryDarkGrey,
                         // color: Colors.transparent,
                         size: 20,
                       ),
@@ -118,7 +118,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                     style: TextStyle(
                         fontFamily: 'poppins',
                         fontSize: 16.0,
-                        color: Colours.strongRed,
+                        color: Flights_Colours.strongRed,
                         fontWeight: FontWeight.w700),
                   ),
                   GestureDetector(
@@ -126,7 +126,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.filter_alt,
-                        color: Colours.strongRed,
+                        color: Flights_Colours.strongRed,
                         // color: Colors.transparent,
                         size: 20,
                       ),
@@ -146,7 +146,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                       "No Flights Available",
                       style: TextStyle(
                         fontSize: 16.0,
-                        color: Colours.strongRed,
+                        color: Flights_Colours.strongRed,
                         fontFamily: 'Poppins',
                       ),
                     ),
@@ -169,7 +169,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                         border: Border.all(
-                                          color: Colours.strongRed,
+                                          color: Flights_Colours.strongRed,
                                         ),
                                         borderRadius: BorderRadius.circular(10),
                                         color: Colors.grey.shade100),
@@ -202,7 +202,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                     "${dataFlightDetails![index].flightDetails![0].airLineName} (${dataFlightDetails![index].flightDetails![0].airLine}-${dataFlightDetails![index].flightDetails![0].flightSegments![0].flightNumber})",
                                                     style: TextStyle(
                                                       fontSize: 14.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontFamily: 'Poppins',
                                                     ),
                                                   ),
@@ -254,7 +255,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                               Icon(
                                                 Icons.flight_takeoff,
                                                 size: 30,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               Text(
                                                 dataFlightDetails![index]
@@ -277,7 +279,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                               Icon(
                                                 Icons.flight_land,
                                                 size: 30,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                             ],
                                           ),
@@ -302,7 +305,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                               SizedBox(
                                                 width: 150,
                                                 child: Divider(
-                                                  color: Colours.strongRed,
+                                                  color:
+                                                      Flights_Colours.strongRed,
                                                   thickness: 3,
                                                 ),
                                               ),
@@ -371,7 +375,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                         border: Border.all(
-                                          color: Colours.strongRed,
+                                          color: Flights_Colours.strongRed,
                                         ),
                                         borderRadius: BorderRadius.circular(10),
                                         color: Colors.grey.shade100),
@@ -393,7 +397,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                     "${dataFlightDetails![index].flightDetails![1].airLineName} (${dataFlightDetails![index].flightDetails![1].airLine}-${dataFlightDetails![index].flightDetails![1].flightSegments![0].flightNumber})",
                                                     style: TextStyle(
                                                       fontSize: 14.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontFamily: 'Poppins',
                                                     ),
                                                   ),
@@ -445,7 +450,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                               Icon(
                                                 Icons.flight_takeoff,
                                                 size: 30,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               Text(
                                                 dataFlightDetails![index]
@@ -456,7 +462,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                     : "Non Refundable",
                                                 style: TextStyle(
                                                   fontSize: 12.0,
-                                                  color: Colours.veryDarkGrey,
+                                                  color: Flights_Colours
+                                                      .veryDarkGrey,
                                                   fontWeight: FontWeight.bold,
                                                   fontFamily: 'Poppins',
                                                 ),
@@ -464,7 +471,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                               Icon(
                                                 Icons.flight_land,
                                                 size: 30,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                             ],
                                           ),
@@ -489,7 +497,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                               SizedBox(
                                                 width: 150,
                                                 child: Divider(
-                                                  color: Colours.strongRed,
+                                                  color:
+                                                      Flights_Colours.strongRed,
                                                   thickness: 3,
                                                 ),
                                               ),
@@ -567,7 +576,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                             "INR ${dataFlightDetails![index].fareFamilies!.fareFamilies![0].adultPublishFare!.toStringAsFixed(2).toString()}",
                                             style: TextStyle(
                                               fontSize: 14.0,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontWeight: FontWeight.bold,
                                               fontFamily: 'Poppins',
                                             ),
@@ -671,7 +680,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                               },
                                               style: ElevatedButton.styleFrom(
                                                   backgroundColor:
-                                                      Colours.strongRed,
+                                                      Flights_Colours.strongRed,
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -707,7 +716,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                               decoration: BoxDecoration(
                                   color: Colors.grey[300],
                                   borderRadius: BorderRadius.circular(3),
-                                  border: Border.all(color: Colours.strongRed)),
+                                  border: Border.all(
+                                      color: Flights_Colours.strongRed)),
                               child: Container(
                                 margin:
                                     const EdgeInsets.only(right: 15, left: 15),
@@ -724,7 +734,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Filters",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -756,7 +766,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear all",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.dardModerateBlue,
+                                                color: Flights_Colours
+                                                    .dardModerateBlue,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -768,7 +779,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -777,7 +788,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Price Range",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -800,7 +811,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -814,13 +826,13 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           '${_currentRangeValues.start.toStringAsFixed(2)} INR',
                                           style: TextStyle(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14),
                                         ),
                                         Text(
                                           '${_currentRangeValues.end.toStringAsFixed(2)} INR',
                                           style: TextStyle(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14),
                                         ),
                                       ],
@@ -839,9 +851,9 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           ),
                                           trackHeight: 2,
                                           inactiveTrackColor:
-                                              Colours.veryDarkGrey),
+                                              Flights_Colours.veryDarkGrey),
                                       child: RangeSlider(
-                                        activeColor: Colours.strongRed,
+                                        activeColor: Flights_Colours.strongRed,
                                         values: _currentRangeValues,
                                         divisions: 10,
                                         labels: labels,
@@ -856,7 +868,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -865,7 +877,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Stops",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -878,7 +890,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -991,7 +1004,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1000,7 +1013,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Departure Time",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1014,7 +1027,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1052,8 +1066,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1105,8 +1119,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1158,8 +1172,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1211,8 +1225,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1241,7 +1255,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1250,7 +1264,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Arrival Time",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1264,7 +1278,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1302,8 +1317,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1355,8 +1370,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1408,8 +1423,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1461,8 +1476,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1491,7 +1506,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1500,7 +1515,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Fire Type",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1513,7 +1528,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1610,7 +1626,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1619,7 +1635,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Connecting Locations",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1636,7 +1652,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1660,7 +1677,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1669,7 +1686,7 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                         Text(
                                           "Air Lines",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1685,7 +1702,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1727,7 +1745,8 @@ class _FetchedRoundtripFlightsState extends State<FetchedRoundtripFlights> {
                                       });
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colours.strongRed,
+                                        backgroundColor:
+                                            Flights_Colours.strongRed,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(10),

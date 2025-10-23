@@ -3,14 +3,14 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:outc/dashboard/flights/widgets/colors.dart';
 import 'package:outc/widgets/colors/colors.dart';
 
-class ProgressBar extends StatelessWidget {
+class Flight_ProgressBar extends StatelessWidget {
   final Widget child;
   final bool inAsyncCall;
   final double opacity;
   final Color color;
   // final Animation<Color> valueColor;
 
-  const ProgressBar({
+  const Flight_ProgressBar({
     super.key,
     // required Key key,
     required this.child,

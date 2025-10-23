@@ -3,12 +3,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/flights/models/flights_list_model.dart';
 import 'package:outc/dashboard/flights/screens/book_flight_formpage.dart';
+import 'package:outc/dashboard/flights/widgets/colors.dart';
 import 'package:outc/dashboard/flights/widgets/ticketdesign.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:outc/widgets/components/components.dart';
 import 'package:outc/widgets/components/dialogtabsview.dart';
 import 'package:outc/widgets/sharedprefservices.dart';
-import 'package:ticket_widget/ticket_widget.dart';
 
 class OneWayFlightlistPage extends StatefulWidget {
   List<FlightDetail>? originalData;
@@ -108,7 +108,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Flights_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -120,11 +120,11 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Flights_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -155,7 +155,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Flights_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -172,7 +172,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Flights_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -195,7 +195,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colours.veryDarkGrey,
+                        color: Flights_Colours.veryDarkGrey,
                         // color: Colors.transparent,
                         size: 20,
                       ),
@@ -210,7 +210,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                     style: TextStyle(
                         fontFamily: 'poppins',
                         fontSize: 16.0,
-                        color: Colours.strongRed,
+                        color: Flights_Colours.strongRed,
                         fontWeight: FontWeight.w700),
                   ),
                   GestureDetector(
@@ -218,7 +218,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.filter_alt,
-                        color: Colours.strongRed,
+                        color: Flights_Colours.strongRed,
                         // color: Colors.transparent,
                         size: 20,
                       ),
@@ -238,7 +238,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                       "No Flights Available",
                       style: TextStyle(
                         fontSize: 16.0,
-                        color: Colours.strongRed,
+                        color: Flights_Colours.strongRed,
                         fontFamily: 'Poppins',
                       ),
                     ),
@@ -276,7 +276,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     width: double.infinity,
                                     decoration: BoxDecoration(
                                         border: Border.all(
-                                          color: Colours.strongRed,
+                                          color: Flights_Colours.strongRed,
                                         ),
                                         borderRadius: BorderRadius.circular(10),
                                         color: Colors.grey.shade100),
@@ -309,7 +309,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                     "${flightsdata![index].airLineName} (${flightsdata![index].airLine}-${flightsdata![index].flightSegments![0].flightNumber})",
                                                     style: TextStyle(
                                                       fontSize: 14.0,
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontFamily: 'Poppins',
                                                     ),
                                                   ),
@@ -359,7 +360,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                               Icon(
                                                 Icons.flight_takeoff,
                                                 size: 30,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                               Text(
                                                 flightsdata![index]
@@ -381,7 +383,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                               Icon(
                                                 Icons.flight_land,
                                                 size: 30,
-                                                color: Colours.strongRed,
+                                                color:
+                                                    Flights_Colours.strongRed,
                                               ),
                                             ],
                                           ),
@@ -405,7 +408,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                               SizedBox(
                                                 width: 150,
                                                 child: Divider(
-                                                  color: Colours.strongRed,
+                                                  color:
+                                                      Flights_Colours.strongRed,
                                                   thickness: 3,
                                                 ),
                                               ),
@@ -493,7 +497,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               "Baggage Details",
                                                               style: TextStyle(
                                                                 fontSize: 14.0,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                                 fontWeight:
                                                                     FontWeight
@@ -527,7 +531,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                                     Icon(
                                                                       Icons
                                                                           .flight_takeoff,
-                                                                      color: Colours
+                                                                      color: Flights_Colours
                                                                           .strongRed,
                                                                     ),
                                                                   ],
@@ -538,7 +542,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                                       TextStyle(
                                                                     fontSize:
                                                                         14.0,
-                                                                    color: Colours
+                                                                    color: Flights_Colours
                                                                         .strongRed,
                                                                     fontWeight:
                                                                         FontWeight
@@ -553,7 +557,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                                       TextStyle(
                                                                     fontSize:
                                                                         14.0,
-                                                                    color: Colours
+                                                                    color: Flights_Colours
                                                                         .veryDarkGrey,
                                                                     fontWeight:
                                                                         FontWeight
@@ -572,7 +576,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                                 Icon(
                                                                   Icons
                                                                       .luggage_outlined,
-                                                                  color: Colours
+                                                                  color: Flights_Colours
                                                                       .dardModerateBlue,
                                                                 ),
                                                                 Text(
@@ -581,7 +585,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                                       TextStyle(
                                                                     fontSize:
                                                                         14.0,
-                                                                    color: Colours
+                                                                    color: Flights_Colours
                                                                         .dardModerateBlue,
                                                                     fontWeight:
                                                                         FontWeight
@@ -597,7 +601,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                                 Icon(
                                                                   Icons
                                                                       .luggage_outlined,
-                                                                  color: Colours
+                                                                  color: Flights_Colours
                                                                       .dardModerateBlue,
                                                                 ),
                                                                 Text(
@@ -613,7 +617,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                                       TextStyle(
                                                                     fontSize:
                                                                         14.0,
-                                                                    color: Colours
+                                                                    color: Flights_Colours
                                                                         .dardModerateBlue,
                                                                     fontWeight:
                                                                         FontWeight
@@ -640,7 +644,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                             elevation: 0.0,
                                             shape: RoundedRectangleBorder(
                                               side: BorderSide(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(10),
@@ -675,7 +680,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                             elevation: 0.0,
                                             shape: RoundedRectangleBorder(
                                               side: BorderSide(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(10),
@@ -716,7 +722,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                       .toString(),
                                                   style: TextStyle(
                                                     fontSize: 14.0,
-                                                    color: Colours.strongRed,
+                                                    color: Flights_Colours
+                                                        .strongRed,
                                                     fontWeight: FontWeight.w700,
                                                     fontFamily: 'poppins',
                                                   )),
@@ -726,7 +733,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                               Text(amt.toStringAsFixed(2),
                                                   style: TextStyle(
                                                     fontSize: 14.0,
-                                                    color: Colours.strongRed,
+                                                    color: Flights_Colours
+                                                        .strongRed,
                                                     fontWeight: FontWeight.w700,
                                                     fontFamily: 'poppins',
                                                   )),
@@ -831,7 +839,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                               },
                                               style: ElevatedButton.styleFrom(
                                                   backgroundColor:
-                                                      Colours.strongRed,
+                                                      Flights_Colours.strongRed,
                                                   shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(
@@ -867,7 +875,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                               decoration: BoxDecoration(
                                   color: Colors.grey[300],
                                   borderRadius: BorderRadius.circular(3),
-                                  border: Border.all(color: Colours.strongRed)),
+                                  border: Border.all(
+                                      color: Flights_Colours.strongRed)),
                               child: Container(
                                 margin:
                                     const EdgeInsets.only(right: 15, left: 15),
@@ -884,7 +893,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Filters",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -916,7 +925,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear all",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.dardModerateBlue,
+                                                color: Flights_Colours
+                                                    .dardModerateBlue,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -928,7 +938,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -937,7 +947,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Price Range",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -960,7 +970,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -974,13 +985,13 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           '${_currentRangeValues.start.toStringAsFixed(2)} INR',
                                           style: TextStyle(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14),
                                         ),
                                         Text(
                                           '${_currentRangeValues.end.toStringAsFixed(2)} INR',
                                           style: TextStyle(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14),
                                         ),
                                       ],
@@ -999,9 +1010,9 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           ),
                                           trackHeight: 2,
                                           inactiveTrackColor:
-                                              Colours.veryDarkGrey),
+                                              Flights_Colours.veryDarkGrey),
                                       child: RangeSlider(
-                                        activeColor: Colours.strongRed,
+                                        activeColor: Flights_Colours.strongRed,
                                         values: _currentRangeValues,
                                         divisions: 10,
                                         labels: labels,
@@ -1016,7 +1027,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1025,7 +1036,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Stops",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1038,7 +1049,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1151,7 +1163,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1160,7 +1172,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Departure Time",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1174,7 +1186,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1212,8 +1225,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1265,8 +1278,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1318,8 +1331,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1371,8 +1384,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1401,7 +1414,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1410,7 +1423,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Arrival Time",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1424,7 +1437,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1462,8 +1476,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1515,8 +1529,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1568,8 +1582,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1621,8 +1635,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                                               right: 4),
                                                       child: Icon(
                                                         Icons.sunny,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ),
                                                     Padding(
@@ -1651,7 +1665,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1660,7 +1674,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Fire Type",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1673,7 +1687,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1770,7 +1785,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1779,7 +1794,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Connecting Locations",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1796,7 +1811,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1820,7 +1836,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                     ),
                                     Divider(
                                       thickness: 1.0,
-                                      color: Colours.veryDarkGrey,
+                                      color: Flights_Colours.veryDarkGrey,
                                     ),
                                     Row(
                                       mainAxisAlignment:
@@ -1829,7 +1845,7 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                         Text(
                                           "Air Lines",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontSize: 14,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -1845,7 +1861,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                           child: Text(
                                             "Clear",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 14,
                                                 fontWeight: FontWeight.w500),
                                           ),
@@ -1887,7 +1904,8 @@ class _OneWayFlightlistPageState extends State<OneWayFlightlistPage> {
                                       });
                                     },
                                     style: ElevatedButton.styleFrom(
-                                        backgroundColor: Colours.strongRed,
+                                        backgroundColor:
+                                            Flights_Colours.strongRed,
                                         shape: RoundedRectangleBorder(
                                           borderRadius:
                                               BorderRadius.circular(10),

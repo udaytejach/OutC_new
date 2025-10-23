@@ -9,9 +9,10 @@ import 'package:outc/dashboard/flights/models/flight_price_model.dart'
     as flightPrice;
 import 'package:outc/dashboard/flights/models/flightbalaji.dart';
 import 'package:outc/dashboard/flights/screens/ticketView.dart';
+import 'package:outc/dashboard/flights/widgets/colors.dart';
+import 'package:outc/dashboard/flights/widgets/progressbar.dart';
 import 'package:outc/services/api_services_list.dart';
-import 'package:outc/widgets/colors/colors.dart';
-import 'package:outc/widgets/progressbar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class BookFlightFormpage extends StatefulWidget {
@@ -352,7 +353,7 @@ class _BookFlightFormpageState extends State<BookFlightFormpage> {
 
   @override
   Widget build(BuildContext context) {
-    return ProgressBar(
+    return Flight_ProgressBar(
       inAsyncCall: isApiCallProcess,
       opacity: 0.3,
       child: uiSetup(context),
@@ -406,7 +407,7 @@ class _BookFlightFormpageState extends State<BookFlightFormpage> {
                           padding: const EdgeInsets.all(8.0),
                           child: Icon(
                             Icons.arrow_back_ios_new_outlined,
-                            color: Colours.veryDarkGrey,
+                            color: Flights_Colours.veryDarkGrey,
                             // color: Colors.transparent,
                             size: 20,
                           ),
@@ -421,7 +422,7 @@ class _BookFlightFormpageState extends State<BookFlightFormpage> {
                         style: TextStyle(
                             fontFamily: 'poppins',
                             fontSize: 16.0,
-                            color: Colours.strongRed,
+                            color: Flights_Colours.strongRed,
                             fontWeight: FontWeight.w700),
                       ),
                       const Padding(
@@ -487,7 +488,7 @@ class _BookFlightFormpageState extends State<BookFlightFormpage> {
                                             widget.airlineName,
                                             style: TextStyle(
                                               fontSize: 14.0,
-                                              color: Colours.strongRed,
+                                              color: Flights_Colours.strongRed,
                                               fontFamily: 'Poppins',
                                             ),
                                           ),
@@ -524,7 +525,7 @@ class _BookFlightFormpageState extends State<BookFlightFormpage> {
                                   widget.airlineRefund,
                                   style: TextStyle(
                                     fontSize: 12.0,
-                                    color: Colours.veryDarkGrey,
+                                    color: Flights_Colours.veryDarkGrey,
                                     fontWeight: FontWeight.bold,
                                     fontFamily: 'Poppins',
                                   ),
@@ -546,7 +547,7 @@ class _BookFlightFormpageState extends State<BookFlightFormpage> {
                                       SizedBox(
                                         width: 150,
                                         child: Divider(
-                                          color: Colours.strongRed,
+                                          color: Flights_Colours.strongRed,
                                           thickness: 3,
                                         ),
                                       ),
@@ -721,7 +722,8 @@ class _BookFlightFormpageState extends State<BookFlightFormpage> {
                                                     color: Color(0xffC2C2C2))),
                                             hintText: 'Enter Mobile Number',
                                             hintStyle: GoogleFonts.poppins(
-                                                color: Colours.veryDarkGrey,
+                                                color: Flights_Colours
+                                                    .veryDarkGrey,
                                                 fontSize: 15,
                                                 fontWeight: FontWeight.w500),
                                             prefixIcon: Padding(

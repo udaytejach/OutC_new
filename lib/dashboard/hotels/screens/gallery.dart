@@ -1,14 +1,9 @@
-import 'dart:convert';
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:outc/dashboard/hotels/models/selected_hotel_payload.dart';
-import 'package:outc/dashboard/hotels/models/selected_hotel_response_model.dart';
+
+import 'package:outc/dashboard/hotels/widgets/colors.dart';
 import 'package:outc/services/api_services_list.dart';
-import 'package:outc/services/app_constants.dart';
-import 'package:outc/widgets/colors/colors.dart';
-import 'package:http/http.dart' as http;
 
 class Gallery extends StatefulWidget {
   const Gallery({super.key});
@@ -347,7 +342,7 @@ class _GalleryState extends State<Gallery> {
                         // selectedHotel(payloadData);
                       },
                       style: ElevatedButton.styleFrom(
-                          backgroundColor: Colours.strongRed,
+                          backgroundColor: Hotels_Colours.strongRed,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(10),
                           )),

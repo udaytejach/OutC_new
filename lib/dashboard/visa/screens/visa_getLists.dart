@@ -1,15 +1,15 @@
 import 'dart:convert';
-import 'package:expandable/expandable.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as flutter;
-import 'package:flutter/widgets.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:outc/dashboard/visa/models/get_visas_model.dart';
 import 'package:outc/dashboard/visa/screens/visa_fulldetails.dart';
 import 'package:outc/dashboard/visa/screens/visa_guidelinespage.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:http/http.dart' as http;
+import 'package:outc/dashboard/visa/widgets/colors.dart';
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class VisaLists extends StatefulWidget {
@@ -33,7 +33,7 @@ class _VisaListsState extends State<VisaLists> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -45,11 +45,11 @@ class _VisaListsState extends State<VisaLists> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Visa_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Visa_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -80,7 +80,7 @@ class _VisaListsState extends State<VisaLists> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Visa_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -97,7 +97,7 @@ class _VisaListsState extends State<VisaLists> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -155,7 +155,7 @@ class _VisaListsState extends State<VisaLists> {
                     width: double.infinity,
                     decoration: BoxDecoration(
                         border: Border.all(
-                          color: Colours.strongRed,
+                          color: Visa_Colours.strongRed,
                         ),
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.grey.shade100),
@@ -198,7 +198,7 @@ class _VisaListsState extends State<VisaLists> {
                                         child: Text(
                                           '${visa.visaName}, ${visa.country}',
                                           style: GoogleFonts.poppins(
-                                            color: Colours.strongRed,
+                                            color: Visa_Colours.strongRed,
                                             fontSize: 14,
                                             fontWeight: FontWeight.bold,
                                           ),
@@ -314,7 +314,7 @@ class _VisaListsState extends State<VisaLists> {
                                     child: Text(
                                       'Visa Guidelines',
                                       style: GoogleFonts.poppins(
-                                        color: Colours.strongRed,
+                                        color: Visa_Colours.strongRed,
                                         fontSize: 13,
                                         fontWeight: FontWeight.w600,
                                       ),
@@ -343,7 +343,7 @@ class _VisaListsState extends State<VisaLists> {
                                     }
                                   },
                                   style: ElevatedButton.styleFrom(
-                                      backgroundColor: Colours.strongRed,
+                                      backgroundColor: Visa_Colours.strongRed,
                                       shape: RoundedRectangleBorder(
                                         borderRadius: BorderRadius.circular(30),
                                       )),
@@ -404,7 +404,7 @@ class ContentCard extends StatelessWidget {
           child: Text(
             title,
             style: GoogleFonts.poppins(
-              color: Colours.strongRed,
+              color: Visa_Colours.strongRed,
               fontSize: 12,
               fontWeight: FontWeight.w500,
             ),
@@ -468,7 +468,7 @@ class ContentCard extends StatelessWidget {
                 //                       headerAlignment:
                 //                           ExpandablePanelHeaderAlignment.center,
                 //                       tapBodyToCollapse: true,
-                //                       iconColor: Colours.strongRed,
+                //                       iconColor: Visa_Colours.strongRed,
                 //                     ),
                 //                     header: Container(
                 //                       margin: const EdgeInsets.all(10),
@@ -480,7 +480,7 @@ class ContentCard extends StatelessWidget {
                 //                           Text(
                 //                           '${visa.visaName}, ${visa.country}',
                 //                             style: GoogleFonts.poppins(
-                //                        color: Colours.strongRed,
+                //                        color: Visa_Colours.strongRed,
                 //                      fontSize: 14,
                 //                      fontWeight: FontWeight.w500,
                 //                           ),
@@ -489,7 +489,7 @@ class ContentCard extends StatelessWidget {
                 //                          Text(
                 //                           '${visa.typeofVisa} Type',
                 //                             style: GoogleFonts.poppins(
-                //                        color: Colours.dardModerateBlue,
+                //                        color: Visa_Colours.dardModerateBlue,
                 //                      fontSize: 13,
                 //                      fontWeight: FontWeight.w500,
                 //                           ),
@@ -579,7 +579,7 @@ class ContentCard extends StatelessWidget {
 
                 //                         SizedBox( height: 45, width: double.infinity,
                 //                           child: ElevatedButton(
-                //                         style: ElevatedButton.styleFrom(backgroundColor: Colours.strongRed,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
+                //                         style: ElevatedButton.styleFrom(backgroundColor: Visa_Colours.strongRed,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                 //                             onPressed: () async {
                                               
                 //                       try {
@@ -666,7 +666,7 @@ class ContentCard extends StatelessWidget {
                           //  TextSpan(
                           //     text: visa.continent,
                           //     style: GoogleFonts.poppins(
-                          //        color: Colours.strongRed,
+                          //        color: Visa_Colours.strongRed,
                           //      fontSize: 14,
                           //      fontWeight: FontWeight.w500,
                           //           ),
@@ -698,7 +698,7 @@ class ContentCard extends StatelessWidget {
                           //   TextSpan(
                           //     text: visa.typeofVisa,
                           //     style: GoogleFonts.poppins(
-                          //        color: Colours.strongRed,
+                          //        color: Visa_Colours.strongRed,
                           //      fontSize: 14,
                           //      fontWeight: FontWeight.w500,
                           //           ),

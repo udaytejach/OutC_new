@@ -5,7 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:outc/dashboard/flights/models/get_cities_by_search_model.dart';
 import 'package:http/http.dart' as http;
 import 'package:outc/dashboard/flights/screens/search_flights.dart';
-import 'package:outc/widgets/colors/colors.dart';
+import 'package:outc/dashboard/flights/widgets/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class SelectCity extends StatefulWidget {
@@ -95,16 +96,16 @@ class _SelectCityState extends State<SelectCity> {
                   labelText: 'Origin Airport',
                   labelStyle: TextStyle(
                     // fontSize: 14.0,
-                    color: Colours.strongRed,
+                    color: Flights_Colours.strongRed,
                     fontFamily: 'Helvetica Neue',
                     // fontWeight: FontWeight.w700,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colours.strongRed),
+                    borderSide: BorderSide(color: Flights_Colours.strongRed),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colours.strongRed)),
+                      borderSide: BorderSide(color: Flights_Colours.strongRed)),
                 ),
               ),
             ),

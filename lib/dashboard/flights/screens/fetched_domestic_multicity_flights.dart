@@ -3,13 +3,13 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/flights/models/flight_domestic_roundtrip_model.dart';
 import 'package:outc/dashboard/flights/screens/book_domestic_flight.dart';
-import 'package:outc/dashboard/flights/screens/book_flight_formpage.dart';
+
+import 'package:outc/dashboard/flights/widgets/colors.dart';
 import 'package:outc/dashboard/flights/widgets/ticketdesign.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:outc/widgets/components/components.dart';
 import 'package:outc/widgets/components/dialogtabsview.dart';
 import 'package:outc/widgets/sharedprefservices.dart';
-import 'package:ticket_widget/ticket_widget.dart';
 
 class FetchedDomesticMulticityFlights extends StatefulWidget {
   // List<FlightDomesticRoundtripModel>? fulldata;
@@ -130,7 +130,7 @@ class _FetchedDomesticMulticityFlightsState
             style: TextStyle(
               fontSize: 22.0,
               fontFamily: 'poppins',
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
             ),
           ),
           backgroundColor: Colors.white,
@@ -142,11 +142,11 @@ class _FetchedDomesticMulticityFlightsState
             Padding(
               padding: const EdgeInsets.all(4.0),
               child: IconButton(
-                color: Colours.strongRed,
+                color: Flights_Colours.strongRed,
                 icon: Icon(
                   Icons.wallet,
                   size: 28,
-                  color: Colours.strongRed,
+                  color: Flights_Colours.strongRed,
                 ),
                 onPressed: () {
                   showDialog(
@@ -177,7 +177,7 @@ class _FetchedDomesticMulticityFlightsState
                                   "INR ${SharedPrefServices.getwalletblc()}",
                                   style: TextStyle(
                                     fontSize: 20.0,
-                                    color: Colours.strongRed,
+                                    color: Flights_Colours.strongRed,
                                     fontFamily: 'Poppins',
                                     // fontWeight: FontWeight.w700,
                                   ),
@@ -194,7 +194,7 @@ class _FetchedDomesticMulticityFlightsState
               ),
             ),
             IconButton(
-              color: Colours.strongRed,
+              color: Flights_Colours.strongRed,
               icon: const ImageIcon(
                 AssetImage(
                   "images/notifybell.png",
@@ -218,7 +218,7 @@ class _FetchedDomesticMulticityFlightsState
                               padding: const EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.arrow_back_ios_new_outlined,
-                                color: Colours.veryDarkGrey,
+                                color: Flights_Colours.veryDarkGrey,
                                 // color: Colors.transparent,
                                 size: 20,
                               ),
@@ -233,7 +233,7 @@ class _FetchedDomesticMulticityFlightsState
                             style: TextStyle(
                                 fontFamily: 'poppins',
                                 fontSize: 16.0,
-                                color: Colours.strongRed,
+                                color: Flights_Colours.strongRed,
                                 fontWeight: FontWeight.w700),
                           ),
                           GestureDetector(
@@ -241,7 +241,7 @@ class _FetchedDomesticMulticityFlightsState
                               padding: const EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.filter_alt,
-                                color: Colours.strongRed,
+                                color: Flights_Colours.strongRed,
                                 // color: Colors.transparent,
                                 size: 20,
                               ),
@@ -261,7 +261,7 @@ class _FetchedDomesticMulticityFlightsState
                               "No Flights Available",
                               style: TextStyle(
                                 fontSize: 16.0,
-                                color: Colours.strongRed,
+                                color: Flights_Colours.strongRed,
                                 fontFamily: 'Poppins',
                               ),
                             ),
@@ -292,7 +292,8 @@ class _FetchedDomesticMulticityFlightsState
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
-                                                  color: Colours.strongRed,
+                                                  color:
+                                                      Flights_Colours.strongRed,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(10),
@@ -330,8 +331,9 @@ class _FetchedDomesticMulticityFlightsState
                                                             "${dataFlightDetails![index].airLineName} (${dataFlightDetails![index].airLine}-${dataFlightDetails![index].flightSegments![0].flightNumber})",
                                                             style: TextStyle(
                                                               fontSize: 14.0,
-                                                              color: Colours
-                                                                  .strongRed,
+                                                              color:
+                                                                  Flights_Colours
+                                                                      .strongRed,
                                                               fontFamily:
                                                                   'Poppins',
                                                             ),
@@ -391,8 +393,8 @@ class _FetchedDomesticMulticityFlightsState
                                                       Icon(
                                                         Icons.flight_takeoff,
                                                         size: 30,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                       Text(
                                                         dataFlightDetails![
@@ -403,7 +405,7 @@ class _FetchedDomesticMulticityFlightsState
                                                             : "Non Refundable",
                                                         style: TextStyle(
                                                           fontSize: 12.0,
-                                                          color: Colours
+                                                          color: Flights_Colours
                                                               .veryDarkGrey,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -413,8 +415,8 @@ class _FetchedDomesticMulticityFlightsState
                                                       Icon(
                                                         Icons.flight_land,
                                                         size: 30,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ],
                                                   ),
@@ -441,8 +443,8 @@ class _FetchedDomesticMulticityFlightsState
                                                       SizedBox(
                                                         width: 150,
                                                         child: Divider(
-                                                          color:
-                                                              Colours.strongRed,
+                                                          color: Flights_Colours
+                                                              .strongRed,
                                                           thickness: 3,
                                                         ),
                                                       ),
@@ -538,7 +540,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           TextStyle(
                                                                         fontSize:
                                                                             14.0,
-                                                                        color: Colours
+                                                                        color: Flights_Colours
                                                                             .strongRed,
                                                                         fontWeight:
                                                                             FontWeight.bold,
@@ -573,7 +575,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           children: [
                                                                             Icon(
                                                                               Icons.flight_takeoff,
-                                                                              color: Colours.strongRed,
+                                                                              color: Flights_Colours.strongRed,
                                                                             ),
                                                                           ],
                                                                         ),
@@ -584,7 +586,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.strongRed,
+                                                                                Flights_Colours.strongRed,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -598,7 +600,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.veryDarkGrey,
+                                                                                Flights_Colours.veryDarkGrey,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -617,7 +619,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           Icons
                                                                               .luggage_outlined,
                                                                           color:
-                                                                              Colours.dardModerateBlue,
+                                                                              Flights_Colours.dardModerateBlue,
                                                                         ),
                                                                         Text(
                                                                           "${dataFlightDetails![index].flightSegments![0].checkInBaggage} CheckedIn Baggage",
@@ -626,7 +628,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.dardModerateBlue,
+                                                                                Flights_Colours.dardModerateBlue,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -641,7 +643,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           Icons
                                                                               .luggage_outlined,
                                                                           color:
-                                                                              Colours.dardModerateBlue,
+                                                                              Flights_Colours.dardModerateBlue,
                                                                         ),
                                                                         Text(
                                                                           dataFlightDetails![index].flightSegments![0].cabinBaggage!.isEmpty
@@ -652,7 +654,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.dardModerateBlue,
+                                                                                Flights_Colours.dardModerateBlue,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -680,7 +682,7 @@ class _FetchedDomesticMulticityFlightsState
                                                     shape:
                                                         RoundedRectangleBorder(
                                                       side: BorderSide(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                       ),
                                                       borderRadius:
@@ -722,7 +724,7 @@ class _FetchedDomesticMulticityFlightsState
                                                     shape:
                                                         RoundedRectangleBorder(
                                                       side: BorderSide(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                       ),
                                                       borderRadius:
@@ -767,8 +769,9 @@ class _FetchedDomesticMulticityFlightsState
                                                               .toString(),
                                                           style: TextStyle(
                                                             fontSize: 14.0,
-                                                            color: Colours
-                                                                .strongRed,
+                                                            color:
+                                                                Flights_Colours
+                                                                    .strongRed,
                                                             fontWeight:
                                                                 FontWeight.w700,
                                                             fontFamily:
@@ -783,8 +786,9 @@ class _FetchedDomesticMulticityFlightsState
                                                                   2),
                                                           style: TextStyle(
                                                             fontSize: 14.0,
-                                                            color: Colours
-                                                                .strongRed,
+                                                            color:
+                                                                Flights_Colours
+                                                                    .strongRed,
                                                             fontWeight:
                                                                 FontWeight.w700,
                                                             fontFamily:
@@ -902,7 +906,7 @@ class _FetchedDomesticMulticityFlightsState
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               backgroundColor:
-                                                                  Colours
+                                                                  Flights_Colours
                                                                       .strongRed,
                                                               shape:
                                                                   RoundedRectangleBorder(
@@ -944,7 +948,8 @@ class _FetchedDomesticMulticityFlightsState
                                           borderRadius:
                                               BorderRadius.circular(3),
                                           border: Border.all(
-                                              color: Colours.strongRed)),
+                                              color:
+                                                  Flights_Colours.strongRed)),
                                       child: Container(
                                         margin: const EdgeInsets.only(
                                             right: 15, left: 15),
@@ -963,7 +968,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Filters",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -997,7 +1003,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear all",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .dardModerateBlue,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1011,7 +1017,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -1021,7 +1028,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Price Range",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -1046,7 +1054,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1063,13 +1071,15 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   '${_currentRangeValues.start.toStringAsFixed(2)} INR',
                                                   style: TextStyle(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14),
                                                 ),
                                                 Text(
                                                   '${_currentRangeValues.end.toStringAsFixed(2)} INR',
                                                   style: TextStyle(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14),
                                                 ),
                                               ],
@@ -1089,9 +1099,11 @@ class _FetchedDomesticMulticityFlightsState
                                                   ),
                                                   trackHeight: 2,
                                                   inactiveTrackColor:
-                                                      Colours.veryDarkGrey),
+                                                      Flights_Colours
+                                                          .veryDarkGrey),
                                               child: RangeSlider(
-                                                activeColor: Colours.strongRed,
+                                                activeColor:
+                                                    Flights_Colours.strongRed,
                                                 values: _currentRangeValues,
                                                 divisions: 10,
                                                 labels: labels,
@@ -1108,7 +1120,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -1118,7 +1131,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Stops",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -1133,7 +1147,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1259,7 +1273,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -1269,7 +1284,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Departure Time",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -1285,7 +1301,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1330,7 +1346,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1387,7 +1403,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1444,7 +1460,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1501,7 +1517,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1531,7 +1547,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -1541,7 +1558,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Arrival Time",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -1557,7 +1575,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1602,7 +1620,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1659,7 +1677,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1716,7 +1734,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1773,7 +1791,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -1803,7 +1821,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -1813,7 +1832,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Fire Type",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -1828,7 +1848,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1934,7 +1954,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -1944,7 +1965,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Connecting Locations",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -1962,7 +1984,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -1991,7 +2013,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -2001,7 +2024,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Air Lines",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -2019,7 +2043,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -2070,7 +2094,7 @@ class _FetchedDomesticMulticityFlightsState
                                             },
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
-                                                    Colours.strongRed,
+                                                    Flights_Colours.strongRed,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(10),
@@ -2108,7 +2132,7 @@ class _FetchedDomesticMulticityFlightsState
                               padding: const EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.arrow_back_ios_new_outlined,
-                                color: Colours.veryDarkGrey,
+                                color: Flights_Colours.veryDarkGrey,
                                 // color: Colors.transparent,
                                 size: 20,
                               ),
@@ -2123,7 +2147,7 @@ class _FetchedDomesticMulticityFlightsState
                             style: TextStyle(
                                 fontFamily: 'poppins',
                                 fontSize: 16.0,
-                                color: Colours.strongRed,
+                                color: Flights_Colours.strongRed,
                                 fontWeight: FontWeight.w700),
                           ),
                           Text(SharedPrefServices.getdomesticAmount()
@@ -2133,7 +2157,7 @@ class _FetchedDomesticMulticityFlightsState
                               padding: const EdgeInsets.all(8.0),
                               child: Icon(
                                 Icons.filter_alt,
-                                color: Colours.strongRed,
+                                color: Flights_Colours.strongRed,
                                 // color: Colors.transparent,
                                 size: 20,
                               ),
@@ -2153,7 +2177,7 @@ class _FetchedDomesticMulticityFlightsState
                               "No Flights Available",
                               style: TextStyle(
                                 fontSize: 16.0,
-                                color: Colours.strongRed,
+                                color: Flights_Colours.strongRed,
                                 fontFamily: 'Poppins',
                               ),
                             ),
@@ -2185,7 +2209,8 @@ class _FetchedDomesticMulticityFlightsState
                                             width: double.infinity,
                                             decoration: BoxDecoration(
                                                 border: Border.all(
-                                                  color: Colours.strongRed,
+                                                  color:
+                                                      Flights_Colours.strongRed,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(10),
@@ -2223,8 +2248,9 @@ class _FetchedDomesticMulticityFlightsState
                                                             "${returnDataFlightDetails![index].airLineName} (${returnDataFlightDetails![index].airLine}-${returnDataFlightDetails![index].flightSegments![0].flightNumber})",
                                                             style: TextStyle(
                                                               fontSize: 14.0,
-                                                              color: Colours
-                                                                  .strongRed,
+                                                              color:
+                                                                  Flights_Colours
+                                                                      .strongRed,
                                                               fontFamily:
                                                                   'Poppins',
                                                             ),
@@ -2284,8 +2310,8 @@ class _FetchedDomesticMulticityFlightsState
                                                       Icon(
                                                         Icons.flight_takeoff,
                                                         size: 30,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                       Text(
                                                         returnDataFlightDetails![
@@ -2296,7 +2322,7 @@ class _FetchedDomesticMulticityFlightsState
                                                             : "Non Refundable",
                                                         style: TextStyle(
                                                           fontSize: 12.0,
-                                                          color: Colours
+                                                          color: Flights_Colours
                                                               .veryDarkGrey,
                                                           fontWeight:
                                                               FontWeight.bold,
@@ -2306,8 +2332,8 @@ class _FetchedDomesticMulticityFlightsState
                                                       Icon(
                                                         Icons.flight_land,
                                                         size: 30,
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Flights_Colours
+                                                            .strongRed,
                                                       ),
                                                     ],
                                                   ),
@@ -2334,8 +2360,8 @@ class _FetchedDomesticMulticityFlightsState
                                                       SizedBox(
                                                         width: 150,
                                                         child: Divider(
-                                                          color:
-                                                              Colours.strongRed,
+                                                          color: Flights_Colours
+                                                              .strongRed,
                                                           thickness: 3,
                                                         ),
                                                       ),
@@ -2431,7 +2457,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           TextStyle(
                                                                         fontSize:
                                                                             14.0,
-                                                                        color: Colours
+                                                                        color: Flights_Colours
                                                                             .strongRed,
                                                                         fontWeight:
                                                                             FontWeight.bold,
@@ -2466,7 +2492,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           children: [
                                                                             Icon(
                                                                               Icons.flight_takeoff,
-                                                                              color: Colours.strongRed,
+                                                                              color: Flights_Colours.strongRed,
                                                                             ),
                                                                           ],
                                                                         ),
@@ -2477,7 +2503,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.strongRed,
+                                                                                Flights_Colours.strongRed,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -2491,7 +2517,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.veryDarkGrey,
+                                                                                Flights_Colours.veryDarkGrey,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -2510,7 +2536,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           Icons
                                                                               .luggage_outlined,
                                                                           color:
-                                                                              Colours.dardModerateBlue,
+                                                                              Flights_Colours.dardModerateBlue,
                                                                         ),
                                                                         Text(
                                                                           "${returnDataFlightDetails![index].flightSegments![0].checkInBaggage} CheckedIn Baggage",
@@ -2519,7 +2545,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.dardModerateBlue,
+                                                                                Flights_Colours.dardModerateBlue,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -2534,7 +2560,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                           Icons
                                                                               .luggage_outlined,
                                                                           color:
-                                                                              Colours.dardModerateBlue,
+                                                                              Flights_Colours.dardModerateBlue,
                                                                         ),
                                                                         Text(
                                                                           returnDataFlightDetails![index].flightSegments![0].cabinBaggage!.isEmpty
@@ -2545,7 +2571,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                             fontSize:
                                                                                 14.0,
                                                                             color:
-                                                                                Colours.dardModerateBlue,
+                                                                                Flights_Colours.dardModerateBlue,
                                                                             fontWeight:
                                                                                 FontWeight.bold,
                                                                             fontFamily:
@@ -2573,7 +2599,7 @@ class _FetchedDomesticMulticityFlightsState
                                                     shape:
                                                         RoundedRectangleBorder(
                                                       side: BorderSide(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                       ),
                                                       borderRadius:
@@ -2616,7 +2642,7 @@ class _FetchedDomesticMulticityFlightsState
                                                     shape:
                                                         RoundedRectangleBorder(
                                                       side: BorderSide(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                       ),
                                                       borderRadius:
@@ -2661,8 +2687,9 @@ class _FetchedDomesticMulticityFlightsState
                                                               .toString(),
                                                           style: TextStyle(
                                                             fontSize: 14.0,
-                                                            color: Colours
-                                                                .strongRed,
+                                                            color:
+                                                                Flights_Colours
+                                                                    .strongRed,
                                                             fontWeight:
                                                                 FontWeight.w700,
                                                             fontFamily:
@@ -2677,8 +2704,9 @@ class _FetchedDomesticMulticityFlightsState
                                                                   2),
                                                           style: TextStyle(
                                                             fontSize: 14.0,
-                                                            color: Colours
-                                                                .strongRed,
+                                                            color:
+                                                                Flights_Colours
+                                                                    .strongRed,
                                                             fontWeight:
                                                                 FontWeight.w700,
                                                             fontFamily:
@@ -3049,7 +3077,7 @@ class _FetchedDomesticMulticityFlightsState
                                                       style: ElevatedButton
                                                           .styleFrom(
                                                               backgroundColor:
-                                                                  Colours
+                                                                  Flights_Colours
                                                                       .strongRed,
                                                               shape:
                                                                   RoundedRectangleBorder(
@@ -3091,7 +3119,8 @@ class _FetchedDomesticMulticityFlightsState
                                           borderRadius:
                                               BorderRadius.circular(3),
                                           border: Border.all(
-                                              color: Colours.strongRed)),
+                                              color:
+                                                  Flights_Colours.strongRed)),
                                       child: Container(
                                         margin: const EdgeInsets.only(
                                             right: 15, left: 15),
@@ -3110,7 +3139,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Filters",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -3144,7 +3174,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear all",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .dardModerateBlue,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -3158,7 +3188,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -3168,7 +3199,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Price Range",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -3193,7 +3225,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -3210,13 +3242,15 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   '${_currentRangeValues.start.toStringAsFixed(2)} INR',
                                                   style: TextStyle(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14),
                                                 ),
                                                 Text(
                                                   '${_currentRangeValues.end.toStringAsFixed(2)} INR',
                                                   style: TextStyle(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14),
                                                 ),
                                               ],
@@ -3236,9 +3270,11 @@ class _FetchedDomesticMulticityFlightsState
                                                   ),
                                                   trackHeight: 2,
                                                   inactiveTrackColor:
-                                                      Colours.veryDarkGrey),
+                                                      Flights_Colours
+                                                          .veryDarkGrey),
                                               child: RangeSlider(
-                                                activeColor: Colours.strongRed,
+                                                activeColor:
+                                                    Flights_Colours.strongRed,
                                                 values: _currentRangeValues,
                                                 divisions: 10,
                                                 labels: labels,
@@ -3255,7 +3291,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -3265,7 +3302,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Stops",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -3280,7 +3318,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -3406,7 +3444,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -3416,7 +3455,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Departure Time",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -3432,7 +3472,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -3477,7 +3517,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3534,7 +3574,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3591,7 +3631,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3648,7 +3688,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3678,7 +3718,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -3688,7 +3729,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Arrival Time",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -3704,7 +3746,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -3749,7 +3791,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3806,7 +3848,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3863,7 +3905,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3920,7 +3962,7 @@ class _FetchedDomesticMulticityFlightsState
                                                                       right: 4),
                                                               child: Icon(
                                                                 Icons.sunny,
-                                                                color: Colours
+                                                                color: Flights_Colours
                                                                     .strongRed,
                                                               ),
                                                             ),
@@ -3950,7 +3992,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -3960,7 +4003,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Fire Type",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -3975,7 +4019,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -4081,7 +4125,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -4091,7 +4136,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Connecting Locations",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -4109,7 +4155,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -4138,7 +4184,8 @@ class _FetchedDomesticMulticityFlightsState
                                             ),
                                             Divider(
                                               thickness: 1.0,
-                                              color: Colours.veryDarkGrey,
+                                              color:
+                                                  Flights_Colours.veryDarkGrey,
                                             ),
                                             Row(
                                               mainAxisAlignment:
@@ -4148,7 +4195,8 @@ class _FetchedDomesticMulticityFlightsState
                                                 Text(
                                                   "Air Lines",
                                                   style: GoogleFonts.poppins(
-                                                      color: Colours.strongRed,
+                                                      color: Flights_Colours
+                                                          .strongRed,
                                                       fontSize: 14,
                                                       fontWeight:
                                                           FontWeight.w500),
@@ -4166,7 +4214,7 @@ class _FetchedDomesticMulticityFlightsState
                                                   child: Text(
                                                     "Clear",
                                                     style: GoogleFonts.poppins(
-                                                        color: Colours
+                                                        color: Flights_Colours
                                                             .veryDarkGrey,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -4217,7 +4265,7 @@ class _FetchedDomesticMulticityFlightsState
                                             },
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
-                                                    Colours.strongRed,
+                                                    Flights_Colours.strongRed,
                                                 shape: RoundedRectangleBorder(
                                                   borderRadius:
                                                       BorderRadius.circular(10),
