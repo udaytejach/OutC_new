@@ -9,8 +9,9 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/hotels/models/selected_hotel_response_model.dart';
 import 'package:outc/dashboard/hotels/screens/book_hotel_form_page.dart';
-import 'package:outc/widgets/colors/colors.dart';
-import 'package:outc/widgets/progressbar.dart';
+import 'package:outc/dashboard/hotels/widgets/colors.dart';
+import 'package:outc/dashboard/hotels/widgets/progressbar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class SelectedHotelPage extends StatefulWidget {
@@ -40,7 +41,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ProgressBar(
+    return Hotels_ProgressBar(
       inAsyncCall: isApiCallProcess,
       opacity: 0.3,
       child: uiSetup(context),
@@ -60,7 +61,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -72,11 +73,11 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Hotels_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Hotels_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -107,7 +108,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Hotels_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -124,7 +125,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -150,7 +151,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                         padding: const EdgeInsets.all(8.0),
                         child: Icon(
                           Icons.arrow_back_ios_new_outlined,
-                          color: Colours.veryDarkGrey,
+                          color: Hotels_Colours.veryDarkGrey,
                           // color: Colors.transparent,
                           size: 20,
                         ),
@@ -165,7 +166,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                       style: TextStyle(
                           fontFamily: 'poppins',
                           fontSize: 16.0,
-                          color: Colours.strongRed,
+                          color: Hotels_Colours.strongRed,
                           fontWeight: FontWeight.w700),
                     ),
                     const Padding(
@@ -596,8 +597,8 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                                                         style: TextStyle(
                                                           fontSize: 14.0,
                                                           fontFamily: 'poppins',
-                                                          color:
-                                                              Colours.strongRed,
+                                                          color: Hotels_Colours
+                                                              .strongRed,
                                                           fontWeight:
                                                               FontWeight.w700,
 
@@ -633,8 +634,8 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                                                       'Charges will apply on Cancelling',
                                                       style:
                                                           GoogleFonts.poppins(
-                                                        color:
-                                                            Colours.strongRed,
+                                                        color: Hotels_Colours
+                                                            .strongRed,
                                                         fontSize: 14,
                                                         fontWeight:
                                                             FontWeight.w500,
@@ -650,7 +651,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                                                     //           fontSize: 12.0,
                                                     //           fontFamily:
                                                     //               'poppins',
-                                                    //           color: Colours
+                                                    //           color: Hotels_Colours
                                                     //               .strongRed,
                                                     //           fontWeight:
                                                     //               FontWeight
@@ -715,7 +716,8 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                                                                         index]
                                                                     .refundable ==
                                                                 false
-                                                            ? Colours.strongRed
+                                                            ? Hotels_Colours
+                                                                .strongRed
                                                             : Colors.green,
                                                         fontSize: 14,
                                                         fontWeight:
@@ -786,7 +788,7 @@ class _SelectedHotelPageState extends State<SelectedHotelPage> {
                                             },
                                             style: ElevatedButton.styleFrom(
                                                 backgroundColor:
-                                                    Colours.buttonColor,
+                                                    Hotels_Colours.buttonColor,
                                                 shape: RoundedRectangleBorder(
                                                     borderRadius:
                                                         BorderRadius.circular(

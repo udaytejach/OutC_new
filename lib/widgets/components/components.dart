@@ -81,7 +81,7 @@ class WidgetComponent {
 TextStyle textStyleHeading() {
   return TextStyle(
       fontSize: 14.0,
-      color: Colours.strongRed,
+      color: Colours.orangeOutC,
       fontFamily: 'poppins',
       fontWeight: FontWeight.bold);
 }

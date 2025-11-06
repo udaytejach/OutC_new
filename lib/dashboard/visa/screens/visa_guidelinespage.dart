@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:outc/widgets/colors/colors.dart';
+import 'package:outc/dashboard/visa/widgets/colors.dart';
 
 class VisaGuidelinesPage extends StatelessWidget {
   const VisaGuidelinesPage({super.key});
@@ -24,7 +24,7 @@ class VisaGuidelinesPage extends StatelessWidget {
                   GestureDetector(
                     child: Icon(
                       Icons.arrow_back_ios_new_outlined,
-                      color: Colours.strongRed,
+                      color: Visa_Colours.strongRed,
                     ),
                     onTap: () {
                       Navigator.of(context).pop();
@@ -37,7 +37,7 @@ class VisaGuidelinesPage extends StatelessWidget {
                       child: Text(
                         'Visa Guidelines',
                         style: GoogleFonts.poppins(
-                            color: Colours.strongRed,
+                            color: Visa_Colours.strongRed,
                             fontSize: 20,
                             fontWeight: FontWeight.w600),
                       ),
@@ -255,7 +255,7 @@ class ContentCard extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.poppins(
-            color: Colours.dardModerateBlue,
+            color: Visa_Colours.dardModerateBlue,
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
@@ -273,7 +273,7 @@ class ContentCard extends StatelessWidget {
         Text(
           subTitle,
           style: GoogleFonts.poppins(
-            color: Colours.dardModerateBlue,
+            color: Visa_Colours.dardModerateBlue,
             fontSize: 14,
             fontWeight: FontWeight.w600,
           ),

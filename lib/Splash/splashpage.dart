@@ -53,7 +53,7 @@ class _SplashscreenState extends State<Splashscreen> {
           children: [
             Center(
               child: Image.asset(
-                "images/anjmallogo.png",
+                "images/outc.png",
                 height: 250,
                 width: 350,
               ),

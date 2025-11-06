@@ -9,10 +9,12 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:outc/dashboard/hotels/models/hotels_list_model.dart';
 import 'package:outc/dashboard/hotels/models/selected_hotel_payload.dart';
 import 'package:outc/dashboard/hotels/screens/selectedhotel.dart';
+import 'package:outc/dashboard/hotels/widgets/colors.dart';
+import 'package:outc/dashboard/hotels/widgets/progressbar.dart';
 import 'package:outc/services/api_services_list.dart';
 import 'package:outc/widgets/colors/colors.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
-import 'package:outc/widgets/progressbar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class FetchedHotelsList extends StatefulWidget {
@@ -78,7 +80,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
 
   @override
   Widget build(BuildContext context) {
-    return ProgressBar(
+    return Hotels_ProgressBar(
       inAsyncCall: isApiCallProcess,
       opacity: 0.3,
       child: uiSetup(context),
@@ -100,7 +102,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -112,11 +114,11 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Hotels_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Hotels_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -147,7 +149,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Hotels_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -164,7 +166,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -187,7 +189,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colours.veryDarkGrey,
+                        color: Hotels_Colours.veryDarkGrey,
                         // color: Colors.transparent,
                         size: 20,
                       ),
@@ -201,7 +203,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                     style: TextStyle(
                         fontFamily: 'poppins',
                         fontSize: 16.0,
-                        color: Colours.strongRed,
+                        color: Hotels_Colours.strongRed,
                         fontWeight: FontWeight.w700),
                   ),
                   GestureDetector(
@@ -209,7 +211,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                       padding: const EdgeInsets.all(8.0),
                       child: Icon(
                         Icons.filter_alt,
-                        color: Colours.strongRed,
+                        color: Hotels_Colours.strongRed,
                         // color: Colors.transparent,
                         size: 20,
                       ),
@@ -238,17 +240,17 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                 decoration: InputDecoration(
                   labelText: 'Search by Hotel Name',
                   labelStyle: TextStyle(
-                    color: Colours.strongRed,
+                    color: Hotels_Colours.strongRed,
                     fontFamily: 'Helvetica Neue',
                   ),
                   prefixIcon: Icon(
                     Icons.search,
-                    color: Colours.strongRed,
+                    color: Hotels_Colours.strongRed,
                   ),
                   suffixIcon: IconButton(
                     icon: Icon(
                       Icons.close,
-                      color: Colours.strongRed,
+                      color: Hotels_Colours.strongRed,
                     ),
                     onPressed: () {
                       setState(() {
@@ -258,11 +260,11 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                     },
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colours.strongRed),
+                    borderSide: BorderSide(color: Hotels_Colours.strongRed),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colours.strongRed)),
+                      borderSide: BorderSide(color: Hotels_Colours.strongRed)),
                 ),
               ),
             ),
@@ -282,7 +284,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                             width: double.infinity,
                             decoration: BoxDecoration(
                                 border: Border.all(
-                                  color: Colours.strongRed,
+                                  color: Hotels_Colours.strongRed,
                                 ),
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.grey.shade100),
@@ -415,8 +417,8 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                                     "${hotelsData![index].addresses![0].address} ${hotelsData![index].addresses![0].cityName} ${hotelsData![index].addresses![0].postalCode}",
                                                     style: TextStyle(
                                                       fontSize: 12.0,
-                                                      color:
-                                                          Colours.veryDarkGrey,
+                                                      color: Hotels_Colours
+                                                          .veryDarkGrey,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                       fontFamily: 'Poppins',
@@ -540,7 +542,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                                   .toString(),
                                               style: TextStyle(
                                                 fontSize: 14.0,
-                                                color: Colours.strongRed,
+                                                color: Hotels_Colours.strongRed,
                                                 fontWeight: FontWeight.w700,
                                                 fontFamily: 'poppins',
                                               )),
@@ -550,7 +552,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                           Text(amountedited.toStringAsFixed(2),
                                               style: TextStyle(
                                                 fontSize: 14.0,
-                                                color: Colours.strongRed,
+                                                color: Hotels_Colours.strongRed,
                                                 fontWeight: FontWeight.w700,
                                                 fontFamily: 'poppins',
                                               )),
@@ -560,7 +562,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                       //   "INR ${widget.hotelsData![index].hotelNetPrice}",
                                       //   style: TextStyle(
                                       //     fontSize: 14.0,
-                                      //     color: Colours.strongRed,
+                                      //     color: Hotels_Colours.strongRed,
                                       //     fontWeight: FontWeight.bold,
                                       //     fontFamily: 'Poppins',
                                       //   ),
@@ -641,7 +643,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                           },
                                           style: ElevatedButton.styleFrom(
                                               backgroundColor:
-                                                  Colours.strongRed,
+                                                  Hotels_Colours.strongRed,
                                               shape: RoundedRectangleBorder(
                                                 borderRadius:
                                                     BorderRadius.circular(10),
@@ -671,7 +673,8 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                           margin: const EdgeInsets.only(right: 15, left: 15),
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(3),
-                              border: Border.all(color: Colours.strongRed)),
+                              border:
+                                  Border.all(color: Hotels_Colours.strongRed)),
                           child: Container(
                             margin: const EdgeInsets.only(right: 15, left: 15),
                             child: Column(
@@ -688,7 +691,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                     Text(
                                       "Filters",
                                       style: GoogleFonts.poppins(
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -705,7 +708,8 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                       child: Text(
                                         "Clear all",
                                         style: GoogleFonts.poppins(
-                                            color: Colours.dardModerateBlue,
+                                            color:
+                                                Hotels_Colours.dardModerateBlue,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w500),
                                       ),
@@ -724,10 +728,10 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                 //       .map((refund) => FilterChip(
                                 //           selected: selectedrefundablesFilters
                                 //               .contains(refund),
-                                //           checkmarkColor: Colours.strongRed,
+                                //           checkmarkColor: Hotels_Colours.strongRed,
                                 //           label: Text(refund.toString(),
                                 //               style: GoogleFonts.poppins(
-                                //                   color: Colours.strongRed,
+                                //                   color: Hotels_Colours.strongRed,
                                 //                   fontSize: 14,
                                 //                   fontWeight: FontWeight.w500)),
                                 //           onSelected: (selected) {
@@ -747,7 +751,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                 // ),
                                 Divider(
                                   thickness: 1.0,
-                                  color: Colours.veryDarkGrey,
+                                  color: Hotels_Colours.veryDarkGrey,
                                 ),
                                 Row(
                                   mainAxisAlignment:
@@ -756,7 +760,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                     Text(
                                       "Price Range",
                                       style: GoogleFonts.poppins(
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -771,7 +775,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                       child: Text(
                                         "Clear",
                                         style: GoogleFonts.poppins(
-                                            color: Colours.veryDarkGrey,
+                                            color: Hotels_Colours.veryDarkGrey,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w500),
                                       ),
@@ -786,13 +790,13 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                     Text(
                                       '${_currentRangeValues.start.toStringAsFixed(2)} INR',
                                       style: TextStyle(
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                           fontSize: 14),
                                     ),
                                     Text(
                                       '${_currentRangeValues.end.toStringAsFixed(2)} INR',
                                       style: TextStyle(
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                           fontSize: 14),
                                     ),
                                   ],
@@ -810,9 +814,10 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                         overlayRadius: 5.0,
                                       ),
                                       trackHeight: 2,
-                                      inactiveTrackColor: Colours.veryDarkGrey),
+                                      inactiveTrackColor:
+                                          Hotels_Colours.veryDarkGrey),
                                   child: RangeSlider(
-                                    activeColor: Colours.strongRed,
+                                    activeColor: Hotels_Colours.strongRed,
                                     values: _currentRangeValues,
                                     divisions: 10,
                                     labels: labels,
@@ -827,7 +832,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                 ),
                                 Divider(
                                   thickness: 1.0,
-                                  color: Colours.veryDarkGrey,
+                                  color: Hotels_Colours.veryDarkGrey,
                                 ),
 
                                 Row(
@@ -837,7 +842,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                     Text(
                                       "Ratings",
                                       style: GoogleFonts.poppins(
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                           fontSize: 14,
                                           fontWeight: FontWeight.w500),
                                     ),
@@ -851,7 +856,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                       child: Text(
                                         "Clear",
                                         style: GoogleFonts.poppins(
-                                            color: Colours.veryDarkGrey,
+                                            color: Hotels_Colours.veryDarkGrey,
                                             fontSize: 14,
                                             fontWeight: FontWeight.w500),
                                       ),
@@ -1136,7 +1141,7 @@ class _FetchedHotelsListState extends State<FetchedHotelsList> {
                                   });
                                 },
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colours.strongRed,
+                                    backgroundColor: Hotels_Colours.strongRed,
                                     shape: RoundedRectangleBorder(
                                       borderRadius: BorderRadius.circular(10),
                                     )),

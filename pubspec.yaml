@@ -40,6 +40,7 @@ dependencies:
   animated_segmented_tab_control: ^2.0.0
   ticket_widget: ^1.0.2
   image_picker: ^1.1.0
+  font_awesome_flutter: ^10.9.1
 
 
 dev_dependencies:

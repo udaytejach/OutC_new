@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:outc/dashboard/bus/screens/BusDashboard.dart';
 import 'package:outc/dashboard/cars/screens/search_cars.dart';
 import 'package:outc/dashboard/flights/screens/search_flights.dart';
+import 'package:outc/dashboard/flights/widgets/customText.dart';
 import 'package:outc/dashboard/hotels/models/hotels_search_payload.dart';
 import 'package:outc/dashboard/hotels/screens/search_hotel.dart';
 import 'package:outc/dashboard/hotels/screens/select_room_guests.dart';
@@ -12,6 +14,7 @@ import 'package:outc/widgets/components/dialogtabsview.dart';
 import 'package:outc/widgets/components/home_card.dart';
 import 'package:outc/widgets/components/toast.dart';
 import 'package:outc/widgets/sharedprefservices.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -99,7 +102,7 @@ class _HomePageState extends State<HomePage> {
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
-                        color: Colours.veryDarkGrey,
+                        color: Colours.borderGrey,
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -121,14 +124,16 @@ class _HomePageState extends State<HomePage> {
                                 child: Icon(
                                   Icons.flight_takeoff,
                                   size: 34,
-                                  color: Colours.buttonColor,
+                                  color: Colours.orangeOutC,
                                 )),
                             const SizedBox(
                               height: 5,
                             ),
-                            Text(
-                              "Flights",
-                              style: textStyleHeading(),
+                            CustomText(
+                              text: "Flights",
+                              textcolor: Colours.orangeOutC,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
                             ),
                           ],
                         ),
@@ -174,7 +179,7 @@ class _HomePageState extends State<HomePage> {
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
-                        color: Colours.veryDarkGrey,
+                        color: Colours.borderGrey,
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -196,14 +201,16 @@ class _HomePageState extends State<HomePage> {
                                 child: Icon(
                                   Icons.location_city,
                                   size: 34,
-                                  color: Colours.buttonColor,
+                                  color: Colours.orangeOutC,
                                 )),
                             const SizedBox(
                               height: 5,
                             ),
-                            Text(
-                              "Hotels",
-                              style: textStyleHeading(),
+                            CustomText(
+                              text: "Hotels",
+                              textcolor: Colours.orangeOutC,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
                             ),
                           ],
                         ),
@@ -216,7 +223,7 @@ class _HomePageState extends State<HomePage> {
                     Navigator.of(context).push(
                       MaterialPageRoute(
                         builder: (BuildContext context) {
-                          return const SearchCarsPage();
+                          return const Bus_Dashboard();
                         },
                       ),
                     );
@@ -225,7 +232,7 @@ class _HomePageState extends State<HomePage> {
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
-                        color: Colours.veryDarkGrey,
+                        color: Colours.borderGrey,
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -245,16 +252,18 @@ class _HomePageState extends State<HomePage> {
                                 height: 40,
                                 width: 40,
                                 child: Icon(
-                                  Icons.car_rental_sharp,
+                                  Icons.bus_alert_outlined,
                                   size: 34,
-                                  color: Colours.buttonColor,
+                                  color: Colours.orangeOutC,
                                 )),
                             const SizedBox(
                               height: 5,
                             ),
-                            Text(
-                              "Car",
-                              style: textStyleHeading(),
+                            CustomText(
+                              text: "Bus",
+                              textcolor: Colours.orangeOutC,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
                             ),
                           ],
                         ),
@@ -276,7 +285,7 @@ class _HomePageState extends State<HomePage> {
                     elevation: 0.0,
                     shape: RoundedRectangleBorder(
                       side: BorderSide(
-                        color: Colours.veryDarkGrey,
+                        color: Colours.borderGrey,
                       ),
                       borderRadius: BorderRadius.circular(10),
                     ),
@@ -298,14 +307,16 @@ class _HomePageState extends State<HomePage> {
                                 child: Icon(
                                   Icons.book,
                                   size: 34,
-                                  color: Colours.buttonColor,
+                                  color: Colours.orangeOutC,
                                 )),
                             const SizedBox(
                               height: 5,
                             ),
-                            Text(
-                              "Visa",
-                              style: textStyleHeading(),
+                            CustomText(
+                              text: "Visa",
+                              textcolor: Colours.orangeOutC,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
                             ),
                           ],
                         ),

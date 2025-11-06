@@ -39,34 +39,33 @@ class _MultiLoginScreenState extends State<MultiLoginScreen> {
                       child: Container(
                         height: 150.0,
                         alignment: Alignment.topCenter,
-                        child:
-                            Center(child: Image.asset('images/anjmallogo.png')),
+                        child: Center(child: Image.asset('images/outc.png')),
                       ),
                     ),
-                    Center(
-                      child: RichText(
-                        text: const TextSpan(
-                          text: 'Anj',
-                          style: TextStyle(
-                            fontSize: 25.0,
-                            fontFamily: 'poppins',
-                            fontWeight: FontWeight.w800,
-                            color: Color(0xffbd0c21),
-                          ),
-                          children: <TextSpan>[
-                            TextSpan(
-                              text: "Mal",
-                              style: TextStyle(
-                                fontSize: 25.0,
-                                fontFamily: 'poppins',
-                                fontWeight: FontWeight.w800,
-                                color: Color(0xff35459c),
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
+                    // Center(
+                    //   child: RichText(
+                    //     text: const TextSpan(
+                    //       text: 'Anj',
+                    //       style: TextStyle(
+                    //         fontSize: 25.0,
+                    //         fontFamily: 'poppins',
+                    //         fontWeight: FontWeight.w800,
+                    //         color: Color(0xffbd0c21),
+                    //       ),
+                    //       children: <TextSpan>[
+                    //         TextSpan(
+                    //           text: "Mal",
+                    //           style: TextStyle(
+                    //             fontSize: 25.0,
+                    //             fontFamily: 'poppins',
+                    //             fontWeight: FontWeight.w800,
+                    //             color: Color(0xff35459c),
+                    //           ),
+                    //         ),
+                    //       ],
+                    //     ),
+                    //   ),
+                    // ),
                     const SizedBox(height: 20),
                     Container(
                       height: 45,
@@ -89,11 +88,11 @@ class _MultiLoginScreenState extends State<MultiLoginScreen> {
                         indicatorPadding: const EdgeInsets.all(3),
                         tabs: [
                           SegmentTab(
-                            color: Colours.strongRed,
+                            color: Colours.orangeOutC,
                             label: 'User Login',
                           ),
                           SegmentTab(
-                            color: Colours.strongRed,
+                            color: Colours.orangeOutC,
                             label: 'Agent Login',
                           ),
                         ],

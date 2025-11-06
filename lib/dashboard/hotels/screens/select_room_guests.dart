@@ -3,7 +3,8 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 import 'package:outc/dashboard/hotels/models/hotels_search_payload.dart';
 import 'package:outc/dashboard/hotels/screens/search_hotel.dart';
-import 'package:outc/widgets/colors/colors.dart';
+import 'package:outc/dashboard/hotels/widgets/colors.dart';
+
 import 'package:outc/widgets/components/toast.dart';
 import 'package:outc/widgets/sharedprefservices.dart';
 
@@ -58,7 +59,7 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -70,11 +71,11 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Hotels_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Hotels_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -105,7 +106,7 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Hotels_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -122,7 +123,7 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -143,7 +144,7 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
                     IconButton(
                       icon: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colours.strongRed,
+                        color: Hotels_Colours.strongRed,
                         size: 24,
                       ),
                       onPressed: () {
@@ -153,7 +154,7 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
                     Text('Add Number Of Rooms and Guests',
                         style: TextStyle(
                           fontSize: 14.0,
-                          color: Colours.strongRed,
+                          color: Hotels_Colours.strongRed,
                           fontWeight: FontWeight.bold,
                           fontFamily: 'Poppins',
                         )),
@@ -230,7 +231,7 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                backgroundColor: Colours.strongRed,
+                                backgroundColor: Hotels_Colours.strongRed,
                                 fixedSize: const Size(330, 48),
                                 textStyle: const TextStyle(
                                   fontSize: 14.0,
@@ -326,7 +327,7 @@ class _SelectRoomGuestsState extends State<SelectRoomGuests> {
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(10),
                                 ),
-                                backgroundColor: Colours.strongRed,
+                                backgroundColor: Hotels_Colours.strongRed,
                                 fixedSize: const Size(330, 48),
                                 textStyle: const TextStyle(
                                   fontSize: 14.0,
@@ -466,7 +467,7 @@ class RoomSelector extends StatelessWidget {
                       onPressed: onRoomDelete,
                       icon: Icon(
                         Icons.delete,
-                        color: Colours.strongRed,
+                        color: Hotels_Colours.strongRed,
                       ),
                     ),
                 ],

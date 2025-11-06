@@ -1,7 +1,7 @@
 import 'dart:io';
 import 'package:country_picker/country_picker.dart' as CountryPicker;
 import 'package:dotted_border/dotted_border.dart';
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -9,9 +9,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/visa/models/get_visas_model.dart';
 import 'package:outc/dashboard/visa/screens/country_list.dart';
+import 'package:outc/dashboard/visa/widgets/colors.dart';
 import 'package:outc/loginflow/privacypolicypage.dart';
 import 'package:outc/loginflow/termsandconditionspage.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:image_picker/image_picker.dart';
 import 'package:flutter/widgets.dart' as flutter;
 import 'package:outc/widgets/sharedprefservices.dart';
@@ -92,7 +93,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -104,11 +105,11 @@ class _VisaFormPageState extends State<VisaFormPage> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Visa_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Visa_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -139,7 +140,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Visa_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -156,7 +157,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -215,7 +216,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                   padding: const EdgeInsets.only(left: 5),
                   child: Text('Visa Details',
                       style: GoogleFonts.poppins(
-                          color: Colours.strongRed,
+                          color: Visa_Colours.strongRed,
                           fontSize: 16,
                           fontWeight: FontWeight.w500)),
                 ),
@@ -353,7 +354,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                   padding: const EdgeInsets.only(left: 5),
                   child: Text('Passenger Details',
                       style: GoogleFonts.poppins(
-                          color: Colours.strongRed,
+                          color: Visa_Colours.strongRed,
                           fontSize: 16,
                           fontWeight: FontWeight.w500)),
                 ),
@@ -1321,7 +1322,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                                                         radius:
                                                                             8,
                                                                         backgroundColor:
-                                                                            Colours.strongRed,
+                                                                            Visa_Colours.strongRed,
                                                                         child:
                                                                             Center(
                                                                           child: Text(
@@ -1440,7 +1441,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                                                         radius:
                                                                             8,
                                                                         backgroundColor:
-                                                                            Colours.strongRed,
+                                                                            Visa_Colours.strongRed,
                                                                         child:
                                                                             Center(
                                                                           child: Text(
@@ -1559,7 +1560,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                                                         radius:
                                                                             8,
                                                                         backgroundColor:
-                                                                            Colours.strongRed,
+                                                                            Visa_Colours.strongRed,
                                                                         child:
                                                                             Center(
                                                                           child: Text(
@@ -1723,14 +1724,14 @@ class _VisaFormPageState extends State<VisaFormPage> {
                           Padding(
                             padding: const EdgeInsets.only(left: 8),
                             child: Card(
-                              color: Colours.dardModerateBlue,
+                              color: Visa_Colours.dardModerateBlue,
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(5),
                               ),
                               child: Container(
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(5),
-                                    color: Colours.dardModerateBlue),
+                                    color: Visa_Colours.dardModerateBlue),
                                 child: Padding(
                                   padding: const EdgeInsets.only(
                                       right: 5, left: 5, top: 0, bottom: 0),
@@ -1750,7 +1751,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                             child: Text(
                               'Please Upload Original Scanned Color Copies of Each Document Mentioned Above.',
                               style: GoogleFonts.poppins(
-                                color: Colours.strongRed,
+                                color: Visa_Colours.strongRed,
                                 fontSize: 14,
                                 fontWeight: FontWeight.w500,
                               ),
@@ -1854,7 +1855,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                             Text(
                                                 "INR ${widget.visaData.fees! * _selectedCardCount}",
                                                 style: GoogleFonts.poppins(
-                                                    color: Colours
+                                                    color: Visa_Colours
                                                         .dardModerateBlue,
                                                     fontSize: 16,
                                                     fontWeight:
@@ -1866,7 +1867,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                         ),
                                         Text("Apply Promo",
                                             style: GoogleFonts.poppins(
-                                                color: Colours.strongRed,
+                                                color: Visa_Colours.strongRed,
                                                 fontSize: 16,
                                                 fontWeight: FontWeight.w600)),
                                         const SizedBox(
@@ -1924,7 +1925,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                               onPressed: () {},
                                               style: ElevatedButton.styleFrom(
                                                   backgroundColor:
-                                                      Colours.strongRed,
+                                                      Visa_Colours.strongRed,
                                                   shape: RoundedRectangleBorder(
                                                       borderRadius:
                                                           BorderRadius.circular(
@@ -2002,7 +2003,8 @@ class _VisaFormPageState extends State<VisaFormPage> {
                       value: valuecheck,
                       side: BorderSide(color: Colors.grey.shade400, width: 1.5),
                       checkColor: Colors.white,
-                      activeColor: valuecheck ? Colours.strongRed : Colors.grey,
+                      activeColor:
+                          valuecheck ? Visa_Colours.strongRed : Colors.grey,
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(3)),
                       onChanged: (value) {
@@ -2037,7 +2039,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                   },
                                 text: 'Terms & conditions ',
                                 style: TextStyle(
-                                  color: Colours.strongRed,
+                                  color: Visa_Colours.strongRed,
                                   fontWeight: FontWeight.w600,
                                   fontSize: 15,
                                   decoration: TextDecoration.none,
@@ -2064,7 +2066,7 @@ class _VisaFormPageState extends State<VisaFormPage> {
                                 style: TextStyle(
                                   fontSize: 15,
                                   decoration: TextDecoration.none,
-                                  color: Colours.strongRed,
+                                  color: Visa_Colours.strongRed,
                                   fontWeight: FontWeight.bold,
                                 ),
                               ),
@@ -2094,7 +2096,10 @@ class _VisaFormPageState extends State<VisaFormPage> {
                     child: Ink(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Colours.dardModerateBlue, Colors.lightBlue],
+                          colors: [
+                            Visa_Colours.dardModerateBlue,
+                            Colors.lightBlue
+                          ],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),
@@ -2406,7 +2411,7 @@ class ContentCard extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.poppins(
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),

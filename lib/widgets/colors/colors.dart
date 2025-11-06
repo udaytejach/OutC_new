@@ -9,4 +9,7 @@ class Colours {
   static Color dardModerateBlue = const Color(0xff35459c);
   static Color veryDarkGrey = const Color(0xff444444);
   static Color buttonColor = const Color(0xffbd0c21);
+  static Color orangeOutC = const Color(0xffec8333);
+  static Color borderGrey = const Color(0xffE0E0E0);
+  static Color textBlack = const Color(0xff222222);
 }

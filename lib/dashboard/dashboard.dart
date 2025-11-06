@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/account.dart';
+import 'package:outc/dashboard/flights/widgets/customText.dart';
 import 'package:outc/dashboard/homepage.dart';
 import 'package:outc/dashboard/hotels/screens/book_hotel_form_page.dart';
 import 'package:outc/dashboard/my_bookings.dart';
@@ -13,6 +14,7 @@ import 'package:outc/sidemenu/sidemenu.dart';
 import 'package:outc/widgets/colors/colors.dart';
 import 'package:outc/widgets/progressbar.dart';
 import 'package:outc/widgets/sharedprefservices.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 // import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
@@ -85,23 +87,28 @@ class _DashboardState extends State<Dashboard> {
         backgroundColor: Colors.white,
         appBar: AppBar(
           centerTitle: true,
-          title: Text(
-            "AnjMal",
-            style: TextStyle(
-              fontSize: 22.0,
-              fontFamily: 'poppins',
-              color: Colours.strongRed,
-            ),
+          title: Image.asset(
+            "images/outc.png",
+            height: 80,
+            width: 80,
           ),
+          // Text(
+          //   "AnjMal",
+          //   style: TextStyle(
+          //     fontSize: 22.0,
+          //     fontFamily: 'poppins',
+          //     color: Colours.strongRed,
+          //   ),
+          // ),
           backgroundColor: Colors.white,
-          iconTheme: const IconThemeData(
-            color: Colors.grey,
+          iconTheme: IconThemeData(
+            color: Colours.borderGrey,
           ),
           leading: Padding(
             padding: const EdgeInsets.all(8),
             child: Avatar(
-              backgroundColor: Colours.strongRed,
-              placeholderColors: [Colours.strongRed],
+              backgroundColor: Colours.orangeOutC,
+              placeholderColors: [Colours.orangeOutC],
               useCache: true,
 
               onTap: () {
@@ -121,12 +128,13 @@ class _DashboardState extends State<Dashboard> {
             Padding(
               padding: const EdgeInsets.all(4.0),
               child: IconButton(
-                color: Colours.strongRed,
-                icon: Icon(
-                  Icons.wallet,
-                  size: 28,
-                  color: Colours.strongRed,
-                ),
+                color: Colours.orangeOutC,
+                icon: FaIcon(FontAwesomeIcons.wallet),
+                // Icon(
+                //   Icons.wallet,
+                //   size: 28,
+                //   color: Colours.orangeOutC,
+                // ),
                 onPressed: () {
                   showDialog(
                       context: context,
@@ -142,25 +150,29 @@ class _DashboardState extends State<Dashboard> {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                const Text(
-                                  "My Wallet Balance",
-                                  style: TextStyle(
-                                    fontSize: 14.0,
-                                    color: Colors.black,
-                                    fontFamily: 'Poppins',
-                                    fontWeight: FontWeight.w700,
-                                  ),
+                                CustomText(
+                                  text: "My Wallet Balance",
+                                  textcolor: Colours.textBlack,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w400,
                                 ),
                                 const SizedBox(height: 10),
-                                Text(
-                                  "INR ${SharedPrefServices.getwalletblc()}",
-                                  style: TextStyle(
-                                    fontSize: 20.0,
-                                    color: Colours.strongRed,
-                                    fontFamily: 'Poppins',
-                                    // fontWeight: FontWeight.w700,
-                                  ),
+                                CustomText(
+                                  text:
+                                      "INR ${SharedPrefServices.getwalletblc()}",
+                                  textcolor: Colours.orangeOutC,
+                                  fontSize: 20,
+                                  fontWeight: FontWeight.w600,
                                 ),
+                                // Text(
+                                //   "INR ${SharedPrefServices.getwalletblc()}",
+                                //   style: TextStyle(
+                                //     fontSize: 20.0,
+                                //     color: Colours.strongRed,
+                                //     fontFamily: 'Poppins',
+                                //     // fontWeight: FontWeight.w700,
+                                //   ),
+                                // ),
                                 const SizedBox(
                                   height: 10,
                                 ),
@@ -173,12 +185,13 @@ class _DashboardState extends State<Dashboard> {
               ),
             ),
             IconButton(
-              color: Colours.strongRed,
-              icon: const ImageIcon(
-                AssetImage(
-                  "images/notifybell.png",
-                ),
-              ),
+              color: Colours.orangeOutC,
+              icon: FaIcon(FontAwesomeIcons.bell),
+              // const ImageIcon(
+              //   AssetImage(
+              //     "images/notifybell.png",
+              //   ),
+              // ),
               onPressed: () {},
             ),
           ],
@@ -188,26 +201,26 @@ class _DashboardState extends State<Dashboard> {
         bottomNavigationBar: BottomNavigationBar(
           backgroundColor: Colors.white,
           currentIndex: selectIndex,
-          selectedItemColor: Colours.strongRed,
+          selectedItemColor: Colours.orangeOutC,
           unselectedItemColor: Colors.grey.shade400,
           onTap: _onItemTapped,
           items: const [
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.list,
-              ),
+              icon: FaIcon(FontAwesomeIcons.list),
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.list,
-              ),
+              icon: FaIcon(FontAwesomeIcons.bookBookmark),
+              // Icon(
+              //   Icons.bookmark_outline,
+              // ),
               label: 'Bookings',
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.person,
-              ),
+              icon: FaIcon(FontAwesomeIcons.user),
+              // Icon(
+              //   Icons.person,
+              // ),
               label: 'Account',
             ),
           ],

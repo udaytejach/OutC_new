@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart' as flutter;
-import 'package:flutter/widgets.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:outc/dashboard/visa/models/get_visas_model.dart';
 import 'package:outc/dashboard/visa/screens/visa_formpage.dart';
-import 'package:outc/widgets/colors/colors.dart';
+import 'package:outc/dashboard/visa/widgets/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class VisaFullDetails extends StatefulWidget {
@@ -29,7 +29,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -41,11 +41,11 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Visa_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Visa_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -76,7 +76,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Visa_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -93,7 +93,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -161,14 +161,14 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                 ),
 
                 Card(
-                  color: Colours.dardModerateBlue,
+                  color: Visa_Colours.dardModerateBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colours.dardModerateBlue),
+                        color: Visa_Colours.dardModerateBlue),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: 10, left: 10, top: 2, bottom: 2),
@@ -230,14 +230,14 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                 ),
 
                 Card(
-                  color: Colours.dardModerateBlue,
+                  color: Visa_Colours.dardModerateBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colours.dardModerateBlue),
+                        color: Visa_Colours.dardModerateBlue),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: 10, left: 10, top: 2, bottom: 2),
@@ -270,14 +270,14 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                 ),
 
                 Card(
-                  color: Colours.dardModerateBlue,
+                  color: Visa_Colours.dardModerateBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colours.dardModerateBlue),
+                        color: Visa_Colours.dardModerateBlue),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: 10, left: 10, top: 2, bottom: 2),
@@ -310,14 +310,14 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                 ),
 
                 Card(
-                  color: Colours.dardModerateBlue,
+                  color: Visa_Colours.dardModerateBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colours.dardModerateBlue),
+                        color: Visa_Colours.dardModerateBlue),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: 10, left: 10, top: 2, bottom: 2),
@@ -350,14 +350,14 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                 ),
 
                 Card(
-                  color: Colours.dardModerateBlue,
+                  color: Visa_Colours.dardModerateBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colours.dardModerateBlue),
+                        color: Visa_Colours.dardModerateBlue),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: 10, left: 10, top: 2, bottom: 2),
@@ -396,7 +396,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                           Text(
                             'Essential Documents',
                             style: GoogleFonts.poppins(
-                              color: Colours.strongRed,
+                              color: Visa_Colours.strongRed,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                             ),
@@ -413,7 +413,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                           Text(
                             'Other Documents',
                             style: GoogleFonts.poppins(
-                              color: Colours.strongRed,
+                              color: Visa_Colours.strongRed,
                               fontSize: 14,
                               fontWeight: FontWeight.w500,
                             ),
@@ -438,14 +438,14 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                 ),
 
                 Card(
-                  color: Colours.dardModerateBlue,
+                  color: Visa_Colours.dardModerateBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colours.dardModerateBlue),
+                        color: Visa_Colours.dardModerateBlue),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: 10, left: 10, top: 2, bottom: 2),
@@ -506,7 +506,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                   child: Text(
                     'Embassy Address 1',
                     style: GoogleFonts.poppins(
-                        color: Colours.dardModerateBlue,
+                        color: Visa_Colours.dardModerateBlue,
                         fontWeight: FontWeight.w600,
                         fontSize: 15),
                   ),
@@ -550,7 +550,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                   child: Text(
                     'Embassy Address 2',
                     style: GoogleFonts.poppins(
-                        color: Colours.dardModerateBlue,
+                        color: Visa_Colours.dardModerateBlue,
                         fontWeight: FontWeight.w600,
                         fontSize: 15),
                   ),
@@ -593,7 +593,7 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                   child: Text(
                     'Embassy Address 3',
                     style: GoogleFonts.poppins(
-                        color: Colours.dardModerateBlue,
+                        color: Visa_Colours.dardModerateBlue,
                         fontWeight: FontWeight.w600,
                         fontSize: 15),
                   ),
@@ -634,14 +634,14 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                 ),
 
                 Card(
-                  color: Colours.dardModerateBlue,
+                  color: Visa_Colours.dardModerateBlue,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
                   child: Container(
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(5),
-                        color: Colours.dardModerateBlue),
+                        color: Visa_Colours.dardModerateBlue),
                     child: Padding(
                       padding: const EdgeInsets.only(
                           right: 10, left: 10, top: 2, bottom: 2),
@@ -694,7 +694,10 @@ class _VisaFullDetailsState extends State<VisaFullDetails> {
                     child: Ink(
                       decoration: BoxDecoration(
                         gradient: LinearGradient(
-                          colors: [Colours.dardModerateBlue, Colors.lightBlue],
+                          colors: [
+                            Visa_Colours.dardModerateBlue,
+                            Colors.lightBlue
+                          ],
                           begin: Alignment.centerLeft,
                           end: Alignment.centerRight,
                         ),
@@ -746,7 +749,7 @@ class ContentCard extends StatelessWidget {
         Text(
           title,
           style: GoogleFonts.poppins(
-            color: Colours.strongRed,
+            color: Visa_Colours.strongRed,
             fontSize: 14,
             fontWeight: FontWeight.w500,
           ),

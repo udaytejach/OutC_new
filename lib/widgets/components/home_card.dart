@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:outc/widgets/colors/colors.dart';
 
 Widget buildNote(String? title, String? value) {
@@ -8,7 +9,7 @@ Widget buildNote(String? title, String? value) {
           elevation: 0.0,
           shape: RoundedRectangleBorder(
             side: BorderSide(
-              color: Colours.veryDarkGrey,
+              color: Colours.borderGrey,
             ),
             borderRadius: BorderRadius.circular(10),
           ),
@@ -30,11 +31,10 @@ Widget buildNote(String? title, String? value) {
                     children: [
                       Text(
                         title ?? "",
-                        style: TextStyle(
-                          fontFamily: "Poppins",
+                        style: GoogleFonts.poppins(
+                          fontSize: 16,
                           fontWeight: FontWeight.w700,
-                          fontSize: 16.0,
-                          color: Colours.strongRed,
+                          color: Colours.orangeOutC,
                         ),
                       ),
                       const SizedBox(
@@ -52,10 +52,10 @@ Widget buildNote(String? title, String? value) {
                   ),
                   Text(
                     value ?? "",
-                    style: TextStyle(
-                      fontSize: 14.0,
+                    style: GoogleFonts.poppins(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w400,
                       color: Colours.veryDarkGrey,
-                      fontFamily: 'Poppins',
                     ),
                   ),
                 ],

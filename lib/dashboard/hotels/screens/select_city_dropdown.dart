@@ -7,7 +7,8 @@ import 'package:outc/dashboard/flights/screens/search_flights.dart';
 import 'package:outc/dashboard/hotels/models/get_cities_model.dart';
 import 'package:outc/dashboard/hotels/models/hotels_search_payload.dart';
 import 'package:outc/dashboard/hotels/screens/search_hotel.dart';
-import 'package:outc/widgets/colors/colors.dart';
+import 'package:outc/dashboard/hotels/widgets/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class SelectHotelCityDropdown extends StatefulWidget {
@@ -97,16 +98,16 @@ class _SelectHotelCityDropdownState extends State<SelectHotelCityDropdown> {
                   labelText: 'Enter City Name',
                   labelStyle: TextStyle(
                     // fontSize: 14.0,
-                    color: Colours.strongRed,
+                    color: Hotels_Colours.strongRed,
                     fontFamily: 'Helvetica Neue',
                     // fontWeight: FontWeight.w700,
                   ),
                   enabledBorder: OutlineInputBorder(
-                    borderSide: BorderSide(color: Colours.strongRed),
+                    borderSide: BorderSide(color: Hotels_Colours.strongRed),
                     borderRadius: BorderRadius.circular(10),
                   ),
                   border: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colours.strongRed)),
+                      borderSide: BorderSide(color: Hotels_Colours.strongRed)),
                 ),
               ),
             ),

@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:outc/dashboard/hotels/models/hotels_search_payload.dart';
 import 'package:outc/dashboard/hotels/screens/search_hotel.dart';
+import 'package:outc/dashboard/hotels/widgets/colors.dart';
 import 'package:outc/dashboard/visa/screens/country_list.dart';
-import 'package:outc/widgets/colors/colors.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class SelectCountry extends StatefulWidget {
@@ -90,16 +91,17 @@ class _SelectCountryState extends State<SelectCountry> {
                   decoration: InputDecoration(
                     labelText: 'Search For A Country',
                     labelStyle: TextStyle(
-                        color: Colours.strongRed,
+                        color: Hotels_Colours.strongRed,
                         fontFamily: 'Helvetica Neue',
                         fontSize: 14,
                         fontWeight: FontWeight.w500),
                     enabledBorder: OutlineInputBorder(
-                      borderSide: BorderSide(color: Colours.strongRed),
+                      borderSide: BorderSide(color: Hotels_Colours.strongRed),
                       borderRadius: BorderRadius.circular(10),
                     ),
                     border: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colours.strongRed)),
+                        borderSide:
+                            BorderSide(color: Hotels_Colours.strongRed)),
                   ),
                 ),
               ),

@@ -1,21 +1,22 @@
 import 'dart:convert';
 import 'dart:developer';
-import 'package:avatars/avatars.dart';
+
 import 'package:carousel_slider/carousel_slider.dart';
-import 'package:flutter/foundation.dart';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:outc/dashboard/dashboard.dart';
-import 'package:outc/dashboard/homepage.dart';
+
 import 'package:outc/dashboard/hotels/models/hotels_search_payload.dart';
 import 'package:outc/dashboard/hotels/screens/fetched_hotels_list.dart';
 import 'package:outc/dashboard/hotels/screens/select_city_dropdown.dart';
 import 'package:outc/dashboard/hotels/screens/select_country.dart';
 import 'package:outc/dashboard/hotels/screens/select_room_guests.dart';
+import 'package:outc/dashboard/hotels/widgets/colors.dart';
+import 'package:outc/dashboard/hotels/widgets/progressbar.dart';
 import 'package:outc/services/api_services_list.dart';
-import 'package:outc/widgets/colors/colors.dart';
-import 'package:outc/widgets/progressbar.dart';
+
 import 'package:outc/widgets/sharedprefservices.dart';
 
 class HotelSearchPage extends StatefulWidget {
@@ -66,7 +67,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ProgressBar(
+    return Hotels_ProgressBar(
       inAsyncCall: isApiCallProcess,
       opacity: 0.3,
       child: uiSetup(context),
@@ -85,7 +86,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
           style: TextStyle(
             fontSize: 22.0,
             fontFamily: 'poppins',
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
           ),
         ),
         backgroundColor: Colors.white,
@@ -95,11 +96,11 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
         leading: Padding(
             padding: const EdgeInsets.all(8),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Hotels_Colours.strongRed,
               icon: Icon(
                 Icons.home,
                 size: 28,
-                color: Colours.strongRed,
+                color: Hotels_Colours.strongRed,
               ),
               onPressed: () {
                 Navigator.of(context).push(
@@ -115,11 +116,11 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
           Padding(
             padding: const EdgeInsets.all(4.0),
             child: IconButton(
-              color: Colours.strongRed,
+              color: Hotels_Colours.strongRed,
               icon: Icon(
                 Icons.wallet,
                 size: 28,
-                color: Colours.strongRed,
+                color: Hotels_Colours.strongRed,
               ),
               onPressed: () {
                 showDialog(
@@ -150,7 +151,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                 "INR ${SharedPrefServices.getwalletblc()}",
                                 style: TextStyle(
                                   fontSize: 20.0,
-                                  color: Colours.strongRed,
+                                  color: Hotels_Colours.strongRed,
                                   fontFamily: 'Poppins',
                                   // fontWeight: FontWeight.w700,
                                 ),
@@ -167,7 +168,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
             ),
           ),
           IconButton(
-            color: Colours.strongRed,
+            color: Hotels_Colours.strongRed,
             icon: const ImageIcon(
               AssetImage(
                 "images/notifybell.png",
@@ -199,7 +200,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                               GestureDetector(
                                 child: Icon(
                                   Icons.arrow_back_ios_new_outlined,
-                                  color: Colours.veryDarkGrey,
+                                  color: Hotels_Colours.veryDarkGrey,
                                   size: 20,
                                 ),
                                 onTap: () {
@@ -266,7 +267,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                       Icon(
                                         Icons.hotel,
                                         size: 30,
-                                        color: Colours.strongRed,
+                                        color: Hotels_Colours.strongRed,
                                       ),
                                       const SizedBox(
                                         width: 10,
@@ -301,7 +302,8 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                                   "Enter City Name",
                                                   style: TextStyle(
                                                     fontSize: 12.0,
-                                                    color: Colours.strongRed,
+                                                    color: Hotels_Colours
+                                                        .strongRed,
                                                     fontFamily: 'Poppins',
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -387,7 +389,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                         Icon(
                                           Icons.person,
                                           size: 24,
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                         ),
                                         const SizedBox(
                                           width: 10,
@@ -402,7 +404,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                               "Room: ${SharedPrefServices.getroomCount()}, Guests: ${SharedPrefServices.getguestCount()}",
                                               style: TextStyle(
                                                 fontSize: 12.0,
-                                                color: Colours.strongRed,
+                                                color: Hotels_Colours.strongRed,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'Poppins',
                                               ),
@@ -438,7 +440,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                         Icon(
                                           Icons.calendar_today,
                                           size: 24,
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                         ),
                                         const SizedBox(
                                           width: 10,
@@ -453,7 +455,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                               "Check In",
                                               style: TextStyle(
                                                 fontSize: 12.0,
-                                                color: Colours.strongRed,
+                                                color: Hotels_Colours.strongRed,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'Poppins',
                                               ),
@@ -494,7 +496,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                         Icon(
                                           Icons.calendar_today,
                                           size: 24,
-                                          color: Colours.strongRed,
+                                          color: Hotels_Colours.strongRed,
                                         ),
                                         const SizedBox(
                                           width: 10,
@@ -509,7 +511,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                               "Check Out",
                                               style: TextStyle(
                                                 fontSize: 12.0,
-                                                color: Colours.strongRed,
+                                                color: Hotels_Colours.strongRed,
                                                 fontWeight: FontWeight.bold,
                                                 fontFamily: 'Poppins',
                                               ),
@@ -550,7 +552,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                       Icon(
                                         Icons.flag,
                                         size: 30,
-                                        color: Colours.strongRed,
+                                        color: Hotels_Colours.strongRed,
                                       ),
                                       const SizedBox(
                                         width: 10,
@@ -585,7 +587,8 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                                   "Enter Nationality",
                                                   style: TextStyle(
                                                     fontSize: 12.0,
-                                                    color: Colours.strongRed,
+                                                    color: Hotels_Colours
+                                                        .strongRed,
                                                     fontFamily: 'Poppins',
                                                     fontWeight: FontWeight.bold,
                                                   ),
@@ -681,7 +684,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                                     BorderRadius.circular(10),
                                               ),
                                               backgroundColor:
-                                                  Colours.strongRed,
+                                                  Hotels_Colours.strongRed,
                                               fixedSize: const Size(330, 48),
                                               textStyle: const TextStyle(
                                                 fontSize: 14.0,
@@ -763,7 +766,8 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                         Text(
                                           "BEST PRICE GUARANTED",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.dardModerateBlue,
+                                              color: Hotels_Colours
+                                                  .dardModerateBlue,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -824,7 +828,8 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                                         Text(
                                           "24*7 SUPPORT",
                                           style: GoogleFonts.poppins(
-                                              color: Colours.dardModerateBlue,
+                                              color: Hotels_Colours
+                                                  .dardModerateBlue,
                                               fontSize: 16,
                                               fontWeight: FontWeight.w500),
                                         ),
@@ -884,7 +889,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                     Text(
                       "Travel for less with our great deals",
                       style: GoogleFonts.poppins(
-                          color: Colours.strongRed,
+                          color: Hotels_Colours.strongRed,
                           fontSize: 20,
                           fontWeight: FontWeight.w600),
                     ),
@@ -960,7 +965,7 @@ class _HotelSearchPageState extends State<HotelSearchPage> {
                       Text(
                         "Why AnjMal ?",
                         style: GoogleFonts.poppins(
-                            color: Colours.strongRed,
+                            color: Hotels_Colours.strongRed,
                             fontSize: 22,
                             fontWeight: FontWeight.w600),
                       ),
